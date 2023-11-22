@@ -1,0 +1,37 @@
+/* Menu styles */
+.menu {
+  /* Make the menu fill the height of the viewport */
+  height: 91.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Item styles */
+.menu .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ListItem styles */
+.menu .item .listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Hover effect for ListItem */
+.menu .item .listItem:hover {
+  background-color: #384256; /* $soft-bg value from variables.scss */
+}
+
+/* ListItemTitle styles */
+.menu .item .listItem .listItemTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+}

@@ -47,26 +47,3 @@ function App() {
 }
 
 export default App;
-
-// <div id="layout">
-//   <nav id="navbar">
-//     <ul>
-//       <li>
-//         <Link to="/">Login</Link>
-//       </li>
-//       <li>
-//         <Link to="/dashboard">Dashboard</Link>
-//       </li>
-//       <li>
-//         <Link to="/trending">Trending</Link>
-//       </li>
-//       <li>
-//         <Link to="/friends">Gallery</Link>
-//       </li>
-//       <li>
-//         <Link to="/playlists">Gallery</Link>
-//       </li>
-//     </ul>
-//   </nav>
-//   <Outlet />
-// </div>
