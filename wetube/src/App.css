@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Global link styles */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main styles */
+.main {
+  font-family: "Inter", sans-serif;
+  background-color: #2a3447; /* $main-bg value from variables.scss */
+  color: white; /* $main-color value from variables.scss */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container styles */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Menu container styles */
+.leftnavContainer {
+  width: 250px;
+  padding: 5px 20px;
+  border-right: 2px solid #384256; /* $soft-bg value from variables.scss */
+
+  /* Responsive styles using the lg mixin from responsive.scss */
+  /* Content of lg mixin from responsive.scss */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Content container styles */
+.contentContainer {
+  padding: 5px 20px;
+  width: 100%;
 }
