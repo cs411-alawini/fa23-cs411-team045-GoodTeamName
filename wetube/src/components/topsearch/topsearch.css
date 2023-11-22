@@ -1,0 +1,50 @@
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo styles */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.navbar .logo .logo-icon {
+  width: 80px;
+  object-fit: cover;
+}
+
+/* Icons container styles */
+.navbar .icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Icon styles */
+.navbar .icons .icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* User styles */
+.navbar .icons .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .icons .user img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
