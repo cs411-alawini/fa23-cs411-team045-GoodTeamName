@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #2a3447;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start space-between;
+  align-items: center; /* Added to center the form horizontally */
+  margin: 60px auto;
+  padding: 20px; /* Decreased padding to make the form smaller */
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  color: bisque;
+}
+
+.title {
+  /* existing styles */
+  margin-bottom: 20px;
+  text-align: center;
+  align-self: center; /* Add this line to align the title to the top */
+  /* existing styles */
+}
+
+.name {
+  /* existing styles */
+  margin-bottom: 20px;
+  /* existing styles */
+}
+
+.password {
+  /* existing styles */
+  margin-bottom: 20px;
+  /* existing styles */
+}
