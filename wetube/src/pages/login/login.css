@@ -10,7 +10,7 @@ a {
   color: inherit;
 }
 
-.main {
+.login-main {
   height: 100vh;
   font-family: "Inter", sans-serif;
   background-color: #2a3447;
@@ -33,22 +33,18 @@ a {
   color: bisque;
 }
 
-.title {
-  /* existing styles */
+.login-title {
   margin-bottom: 20px;
   text-align: center;
-  align-self: center; /* Add this line to align the title to the top */
-  /* existing styles */
+  align-self: center;
+  font-size: 2em;
+  font-weight: bold;
 }
 
-.name {
-  /* existing styles */
+.login-name {
   margin-bottom: 20px;
-  /* existing styles */
 }
 
-.password {
-  /* existing styles */
+.login-password {
   margin-bottom: 20px;
-  /* existing styles */
 }

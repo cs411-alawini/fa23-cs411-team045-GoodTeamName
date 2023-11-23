@@ -15,11 +15,11 @@ const Login = () => {
   // };
 
   return (
-    <div className="main">
+    <div className="login-main">
       <form className="auth-form">
-        <h2 className="title">Login</h2>
+        <h2 className="login-title">Login</h2>
 
-        <label>
+        <label className="login-name">
           <span>username:</span>
           <input
             required
@@ -28,7 +28,7 @@ const Login = () => {
           />
         </label>
 
-        <label>
+        <label className="login-password">
           <span>password:</span>
           <input
             required
