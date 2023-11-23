@@ -1,0 +1,40 @@
+.playlist-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: start;
+  grid-gap: 60px;
+}
+
+/* project summary */
+.playlist-detail {
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.playlist-detail .playlist-title {
+  color: var(--text-color);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.playlist-detail h4 {
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.playlist-detail .contained-videos {
+  display: flex;
+  margin-top: 20px;
+}
+
+.playlist-detail + .btn {
+  margin-top: 20px;
+}
+.playlist-detail .playlist-video {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.playlist-detail .playlist-video .playlist-video-idv {
+  margin-right: 100px;
+}
