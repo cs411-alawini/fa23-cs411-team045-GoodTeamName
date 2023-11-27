@@ -4,13 +4,13 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import Leftnav from "./components/leftnav/leftnav";
 import Topsearch from "./components/topsearch/topsearch";
 
-import Login from "./pages/login/Login";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Trending from "./pages/trending/Trending";
-import Friends from "./pages/friends/Friends";
-import Playlists from "./pages/playlists/Playlists";
-import Videoinfo from "./pages/videoinfo/Videoinfo";
-import Playlistinfo from "./pages/playlistinfo/Playlistinfo";
+import Login from "./pages/login/login";
+import Dashboard from "./pages/dashboard/dashboard";
+import Trending from "./pages/trending/trending";
+import Friends from "./pages/friends/friends";
+import Playlists from "./pages/playlists/playlists";
+import Videoinfo from "./pages/videoinfo/videoinfo";
+import Playlistinfo from "./pages/playlistinfo/playlistinfo";
 
 function App() {
   const Layout = () => {

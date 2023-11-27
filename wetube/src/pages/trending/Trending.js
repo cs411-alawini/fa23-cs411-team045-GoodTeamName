@@ -1,8 +1,8 @@
 import React from "react";
-import './trending.css'; // Importing the CSS file
-import Bar from "../../components/barchart/BarChart";
-import Pie from "../../components/piechart/PieChart";
-import YouTubeEmbed from "../../components/thumbnail/ThumbNail";
+import "./trending.css"; // Importing the CSS file
+import Bar from "../../components/barchart/barChart";
+import Pie from "../../components/piechart/pieChart";
+import YouTubeEmbed from "../../components/thumbnail/thumbNail";
 
 const Trending = () => {
   return (
@@ -14,10 +14,10 @@ const Trending = () => {
           <div className="value">April 9, 2023</div>
         </div>
         <div className="bar-chart">
-          <Bar/>
+          <Bar />
         </div>
         <div className="category-section">
-          <Pie/>
+          <Pie />
         </div>
       </div>
       {/* Stats Section */}
@@ -44,7 +44,3 @@ const Trending = () => {
 };
 
 export default Trending;
-
-
-
- 

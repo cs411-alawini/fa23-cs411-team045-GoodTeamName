@@ -1,8 +1,8 @@
 import React from "react";
-import './dashboard.css'; // Importing the CSS file
-import Bar from "../../components/barchart/BarChart";
-import Pie from "../../components/piechart/PieChart";
-import YouTubeEmbed from "../../components/thumbnail/ThumbNail";
+import "./dashboard.css"; // Importing the CSS file
+import Bar from "../../components/barchart/barChart";
+import Pie from "../../components/piechart/pieChart";
+import YouTubeEmbed from "../../components/thumbnail/thumbNail";
 
 const Dashboard = () => {
   return (
@@ -14,10 +14,10 @@ const Dashboard = () => {
           <div className="value">114514 videos</div>
         </div>
         <div className="bar-chart">
-          <Bar/>
+          <Bar />
         </div>
         <div className="category-section">
-          <Pie/>
+          <Pie />
         </div>
       </div>
       {/* Stats Section */}
@@ -28,12 +28,16 @@ const Dashboard = () => {
       <hr className="divider" />
       {/* Recommended Videos Section */}
       <div className="videos-grid">
-        <div className="video-card"> //to be changed to a button
+        <div className="video-card">
+          {" "}
+          //to be changed to a button
           <YouTubeEmbed videoId="-XFBVAAzXjc" />
           <div className="label">Playlist 1</div>
           <div className="value">New American Nazis</div>
         </div>
-        <div className="video-card"> //to be changed to a button
+        <div className="video-card">
+          {" "}
+          //to be changed to a button
           <YouTubeEmbed videoId="dVihVavsYE4" />
           <div className="label">Playlist 2</div>
           <div className="value">THIS IS HOW I CARRY ON DOOMFIST</div>
@@ -44,7 +48,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
-
- 
