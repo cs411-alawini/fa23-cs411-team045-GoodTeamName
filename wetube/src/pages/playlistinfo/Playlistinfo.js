@@ -35,6 +35,7 @@ const Playlistinfo = () => {
       <h2>
         Playlist {id}
       </h2>
+      <img className="playlist-pic" alt="playlist preview" src={getThumbnail(placeholderPlaylist[0].video_id)}/>
       <PlaylistVideos playlistId={id}/>
     </div>
   );
@@ -47,10 +48,11 @@ const PlaylistVideos = (props) => {
       <ul className="playlist-formatted">
         {placeholderPlaylist.map((video) => {
           return <li>
-            <img src={getThumbnail(video.video_id)} className="thumbnail"/>
+            <img src={getThumbnail(video.video_id)} alt="video thumbnail" className="thumbnail"/>
             <span>Title: {video.title}</span>
             <span>Channel: {video.channel}</span>
             <span>Views: {video.views}</span>
+            <button className="btn">REMOVE</button>
           </li>;
         })}
       </ul>

@@ -3,6 +3,13 @@ h2 {
     font-weight: bold;
 }
 
+.playlist-pic {
+    min-height: 100px;
+    max-height: 200px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
 .playlist-formatted li {
     display: flex;
     justify-content: space-around;
@@ -21,5 +28,10 @@ h2 {
 
 .playlist-formatted .thumbnail {
     width: 8%;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn {
     margin: 10px;
 }
