@@ -13,8 +13,12 @@ const Topsearch = () => {
       </div>
 
       <div className="icons">
-        <img src={search} alt="" className="icon" />
-
+        <div class="search-section">
+          <form action="" class="search-bar">
+          <input type="text" placeholder="Search channel" className="search-input" />
+          <button type="submit"><img src={search} alt="" className="icon" /></button>
+          </form>
+        </div>
         <div className="user">
           <img src={logo} alt="" className="icon" />
           <span>User name</span>
