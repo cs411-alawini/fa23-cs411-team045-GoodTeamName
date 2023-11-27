@@ -1,7 +1,7 @@
 import React from "react";
 import "./trending.css"; // Importing the CSS file
-import Bar from "../../components/barchart/barChart";
-import Pie from "../../components/piechart/pieChart";
+import Bar from "../../components/barchart/BarChart";
+import Pie from "../../components/piechart/PieChart";
 import YouTubeEmbed from "../../components/thumbnail/thumbNail";
 
 const Trending = () => {
