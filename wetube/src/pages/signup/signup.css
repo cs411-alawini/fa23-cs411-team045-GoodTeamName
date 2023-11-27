@@ -10,7 +10,7 @@ a {
   color: inherit;
 }
 
-.login-main {
+.signup-main {
   height: 100vh;
   font-family: "Inter", sans-serif;
   background-color: #2a3447;
@@ -20,8 +20,8 @@ a {
   align-items: center;
 }
 
-.login-auth-form {
-  height: 20%;
+.sign-auth-form {
+  height: 25%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start space-between;
@@ -33,7 +33,7 @@ a {
   color: rgb(196, 233, 255);
 }
 
-.login-title {
+.signup-title {
   margin-bottom: 20px;
   text-align: center;
   align-self: center;
@@ -41,14 +41,14 @@ a {
   font-weight: bold;
 }
 
-.login-name {
+.signup-name {
   margin-bottom: 20px;
 }
 
-.login-password {
+.signup-region {
   margin-bottom: 20px;
 }
 
-.login-btn-1 {
+.signup-password {
   margin-bottom: 20px;
 }

@@ -13,28 +13,49 @@
 
 .playlist-detail .playlist-title {
   color: var(--text-color);
-  font-size: 1.2em;
   margin-bottom: 10px;
+  font-size: 20pt;
+  font-weight: bold;
 }
 
 .playlist-detail h4 {
   color: var(--text-color);
   margin-bottom: 10px;
 }
+
 .playlist-detail .contained-videos {
   display: flex;
+  flex-direction: column;
   margin-top: 20px;
 }
 
 .playlist-detail + .btn {
   margin-top: 20px;
 }
+
+.playlist-detail .playlist-video-desc {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.playlist-detail .playlist-video-desc .playlist-video-idv {
+  margin-right: 100px;
+  white-space: nowrap;
+}
+
 .playlist-detail .playlist-video {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   margin-right: 10px;
 }
 
 .playlist-detail .playlist-video .playlist-video-idv {
-  margin-right: 100px;
+  padding-top: 10px;
+  margin-right: 220px;
+}
+
+.playlist-detail .contained-videos div:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.2);
 }

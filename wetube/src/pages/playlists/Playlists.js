@@ -1,6 +1,28 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./playlists.css";
+
+const placeholderPlaylists = [
+  {
+    playlistName: "playlist1",
+    video_counts: 3,
+    category: "Cats",
+    id: 1,
+  },
+  {
+    playlistName: "playlist2",
+    video_counts: 3,
+    category: "Cats",
+    id: 1,
+  },
+  {
+    playlistName: "playlist2",
+    video_counts: 3,
+    category: "Cats",
+    id: 1,
+  },
+];
 
 const Playlists = () => {
   const { id } = useParams();
@@ -20,19 +42,32 @@ const Playlists = () => {
     <div className="playlist-container">
       <div>
         <div className="playlist-detail">
-          <h2 className="playlist-title">PlaylistName</h2>
+          <h2 className="playlist-title">Playlists</h2>
 
-          <h4>Playlist contains:</h4>
           <div className="contained-videos">
-            <div className="playlist-video">
-              <p className="playlist-video-idv">VideoName</p>
-              <p className="playlist-video-idv">VideoChannel</p>
-              <p className="playlist-video-idv">VideoCategory</p>
+            <div className="playlist-video-desc">
+              <p className="playlist-video-idv">Playlist Name</p>
+              <p className="playlist-video-idv">Number of Videos Contained </p>
+              <p className="playlist-video-idv">Majority of the Category</p>
+              <p className="playlist-video-idv">Delete</p>
             </div>
+            {placeholderPlaylists.map((playlist) => {
+              return (
+                <div className="playlist-video">
+                  <Link to={`../playlistinfo/${playlist.id}`}>
+                    <p className="playlist-video-idv">
+                      {playlist.playlistName}
+                    </p>
+                  </Link>
+                  <p className="playlist-video-idv">{playlist.video_counts} </p>
+                  <p className="playlist-video-idv">{playlist.category}</p>
+                  <button className="btn">DELETE</button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-      <button className="btn">DELETE</button>
     </div>
 
     // <div className="playlist-container">
