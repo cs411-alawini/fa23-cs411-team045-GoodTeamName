@@ -1,7 +1,7 @@
 import React from 'react';
 
 const YouTubeEmbed = ({ videoId }) => {
-  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
   return (
     <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0 }}>
