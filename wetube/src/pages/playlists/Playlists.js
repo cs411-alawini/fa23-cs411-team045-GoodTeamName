@@ -4,17 +4,17 @@ import "./playlists.css";
 
 const placeholderPlaylists = [
   {
-    playlistName: "PLAYLIST1",
+    playlistName: "playlist1",
     video_counts: 3,
     category: "Cats",
   },
   {
-    playlistName: "PLAYLIST1",
+    playlistName: "playlist2",
     video_counts: 3,
     category: "Cats",
   },
   {
-    playlistName: "PLAYLIST1",
+    playlistName: "playlist2",
     video_counts: 3,
     category: "Cats",
   },
@@ -45,6 +45,7 @@ const Playlists = () => {
               <p className="playlist-video-idv">Playlist Name</p>
               <p className="playlist-video-idv">Number of Videos Contained </p>
               <p className="playlist-video-idv">Majority of the Category</p>
+              <p className="playlist-video-idv">Delete</p>
             </div>
             {placeholderPlaylists.map((playlist) => {
               return (
