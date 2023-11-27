@@ -1,8 +1,8 @@
 import "./App.css";
 import { Routes, Route, Outlet } from "react-router-dom";
 
-import Leftnav from "./components/leftnav/Leftnav";
-import Topsearch from "./components/topsearch/Topsearch";
+import Leftnav from "./components/leftnav/leftnav";
+import Topsearch from "./components/topsearch/topsearch";
 
 import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
