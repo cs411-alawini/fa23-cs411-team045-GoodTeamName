@@ -1,8 +1,8 @@
 import React from "react";
 import "./dashboard.css"; // Importing the CSS file
 import Bar from "../../components/barchart/BarChart";
-import Pie from "../../components/piechart/PieChart";
-import YouTubeEmbed from "../../components/thumbnail/ThumbNail";
+import Pie from "../../components/piechart/Piechart";
+import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
 
 const Dashboard = () => {
   return (
