@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
     <div className="login-main">
-      <form className="auth-form">
+      <form className="login-auth-form">
         <h2 className="login-title">Login</h2>
 
         <label className="login-name">
@@ -37,6 +37,9 @@ const Login = () => {
             value={password}
           />
         </label>
+
+        <button className="btn">Login</button>
+
         {/* 
       {!isPending ? (
         <button className="btn">Login</button>
