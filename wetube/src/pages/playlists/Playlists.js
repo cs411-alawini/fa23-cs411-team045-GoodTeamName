@@ -2,6 +2,24 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./playlists.css";
 
+const placeholderPlaylists = [
+  {
+    playlistName: "PLAYLIST1",
+    video_counts: 3,
+    category: "Cats",
+  },
+  {
+    playlistName: "PLAYLIST1",
+    video_counts: 3,
+    category: "Cats",
+  },
+  {
+    playlistName: "PLAYLIST1",
+    video_counts: 3,
+    category: "Cats",
+  },
+];
+
 const Playlists = () => {
   const { id } = useParams();
   // const { error, playlist } = useDocument("projects", id); // id is the playlist id
@@ -23,15 +41,24 @@ const Playlists = () => {
           <h2 className="playlist-title">Playlists</h2>
 
           <div className="contained-videos">
-            <div className="playlist-video">
+            <div className="playlist-video-desc">
               <p className="playlist-video-idv">Playlist Name</p>
-              <p className="playlist-video-idv">Number of Videos Contained</p>
-              <p className="playlist-video-idv">The majority of the category</p>
+              <p className="playlist-video-idv">Number of Videos Contained </p>
+              <p className="playlist-video-idv">Majority of the Category</p>
             </div>
+            {placeholderPlaylists.map((playlist) => {
+              return (
+                <div className="playlist-video">
+                  <p className="playlist-video-idv">{playlist.playlistName}</p>
+                  <p className="playlist-video-idv">{playlist.video_counts} </p>
+                  <p className="playlist-video-idv">{playlist.category}</p>
+                  <button className="btn">DELETE</button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-      <button className="btn">DELETE</button>
     </div>
 
     // <div className="playlist-container">

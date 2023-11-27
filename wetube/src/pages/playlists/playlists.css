@@ -13,8 +13,9 @@
 
 .playlist-detail .playlist-title {
   color: var(--text-color);
-  font-size: 1.2em;
   margin-bottom: 10px;
+  font-size: 20pt;
+  font-weight: bold;
 }
 
 .playlist-detail h4 {
@@ -23,19 +24,32 @@
 }
 .playlist-detail .contained-videos {
   display: flex;
+  flex-direction: column;
   margin-top: 20px;
 }
 
 .playlist-detail + .btn {
   margin-top: 20px;
 }
+
+.playlist-detail .playlist-video-desc {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.playlist-detail .playlist-video-desc .playlist-video-idv {
+  margin-right: 100px;
+  white-space: nowrap;
+}
+
 .playlist-detail .playlist-video {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   margin-right: 10px;
 }
 
 .playlist-detail .playlist-video .playlist-video-idv {
-  margin-right: 100px;
-  white-space: nowrap;
+  margin-right: 220px;
 }
