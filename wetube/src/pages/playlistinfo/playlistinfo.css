@@ -18,3 +18,8 @@ h2 {
 .playlist-formatted li span {
     width: 30%;
 }
+
+.playlist-formatted .thumbnail {
+    width: 8%;
+    margin: 10px;
+}
