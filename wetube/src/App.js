@@ -33,9 +33,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="signup" element={<Signup />} />
-        <Route path="/" element={<Layout />}>
+        <Route path="app" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="trending" element={<Trending />} />
           <Route path="friends" esslement={<Friends />} />
