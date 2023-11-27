@@ -1,6 +1,6 @@
 import React from "react";
 import "./dashboard.css"; // Importing the CSS file
-import Bar from "../../components/barchart/BarChart";
+import Bar from "../../components/barchart/Barchart";
 import Pie from "../../components/piechart/Piechart";
 import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
 
