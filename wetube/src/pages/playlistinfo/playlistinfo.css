@@ -1,0 +1,25 @@
+h2 {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.playlist-formatted li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 50px;
+    height: 5%;
+}
+
+.playlist-formatted li:nth-child(odd) {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.playlist-formatted li span {
+    width: 30%;
+}
+
+.playlist-formatted .thumbnail {
+    width: 8%;
+    margin: 10px;
+}
