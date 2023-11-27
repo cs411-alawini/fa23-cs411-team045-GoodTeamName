@@ -36,10 +36,6 @@
   border: none; /* focus:ring-2 focus:ring-blue-500 focus:outline-none */
 }
 
-
-
-
-
 .stats {
   margin-bottom: 1.5rem; /* mb-6 */
 }
@@ -51,8 +47,9 @@
 
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem; /* gap-6 */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .video-card {

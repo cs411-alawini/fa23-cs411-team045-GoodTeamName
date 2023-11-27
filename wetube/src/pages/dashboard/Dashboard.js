@@ -2,6 +2,7 @@ import React from "react";
 import './dashboard.css'; // Importing the CSS file
 import Bar from "../../components/barchart/BarChart";
 import Pie from "../../components/piechart/PieChart";
+import YouTubeEmbed from "../../components/thumbnail/ThumbNail";
 
 const Dashboard = () => {
   return (
@@ -9,8 +10,8 @@ const Dashboard = () => {
       {/* Header Section */}
       <div className="header">
         <div className="date-section">
-          <div className="label">Date</div>
-          <div className="value">April 9, 2023</div>
+          <div className="label">Total videos</div>
+          <div className="value">114514 videos</div>
         </div>
         <div className="bar-chart">
           <Bar/>
@@ -21,21 +22,21 @@ const Dashboard = () => {
       </div>
       {/* Stats Section */}
       <div className="stats">
-        <div className="label">Total Videos</div>
-        <div className="value">145 Videos</div>
+        <div className="label">Total Playlists</div>
+        <div className="value">23333 lists</div>
       </div>
       <hr className="divider" />
       {/* Recommended Videos Section */}
       <div className="videos-grid">
-        <div className="video-card">
-          <div className="thumbnail-placeholder"></div>
-          <div className="label">Recommended Trending Video 1</div>
-          <div className="value">How to Cook the Perfect Steak</div>
+        <div className="video-card"> //to be changed to a button
+          <YouTubeEmbed videoId="-XFBVAAzXjc" />
+          <div className="label">Playlist 1</div>
+          <div className="value">New American Nazis</div>
         </div>
-        <div className="video-card">
-          <div className="thumbnail-placeholder"></div>
-          <div className="label">Recommended Trending Video 2</div>
-          <div className="value">Tips & Tricks for Outdoor Photography</div>
+        <div className="video-card"> //to be changed to a button
+          <YouTubeEmbed videoId="dVihVavsYE4" />
+          <div className="label">Playlist 2</div>
+          <div className="value">THIS IS HOW I CARRY ON DOOMFIST</div>
         </div>
       </div>
     </div>
