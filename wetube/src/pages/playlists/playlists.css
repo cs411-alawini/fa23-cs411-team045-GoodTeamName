@@ -37,4 +37,5 @@
 
 .playlist-detail .playlist-video .playlist-video-idv {
   margin-right: 100px;
+  white-space: nowrap;
 }

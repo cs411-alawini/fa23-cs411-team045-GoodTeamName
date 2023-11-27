@@ -20,14 +20,13 @@ const Playlists = () => {
     <div className="playlist-container">
       <div>
         <div className="playlist-detail">
-          <h2 className="playlist-title">PlaylistName</h2>
+          <h2 className="playlist-title">Playlists</h2>
 
-          <h4>Playlist contains:</h4>
           <div className="contained-videos">
             <div className="playlist-video">
-              <p className="playlist-video-idv">VideoName</p>
-              <p className="playlist-video-idv">VideoChannel</p>
-              <p className="playlist-video-idv">VideoCategory</p>
+              <p className="playlist-video-idv">Playlist Name</p>
+              <p className="playlist-video-idv">Number of Videos Contained</p>
+              <p className="playlist-video-idv">The majority of the category</p>
             </div>
           </div>
         </div>
