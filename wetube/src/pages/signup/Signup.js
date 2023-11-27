@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./signup.css";
 
 // import { login, isPending, error, useLogin } from "../../hooks/useLogin";
@@ -61,7 +62,9 @@ const Login = () => {
           />
         </label>
 
-        <button className="btn">Signup</button>
+        <Link to="/app" className="listItem">
+          <button className="btn">Signup</button>
+        </Link>
         {/* 
       {!isPending ? (
         <button className="btn">Login</button>
