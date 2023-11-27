@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./playlists.css";
 
 const placeholderPlaylists = [
@@ -7,16 +8,19 @@ const placeholderPlaylists = [
     playlistName: "playlist1",
     video_counts: 3,
     category: "Cats",
+    id: 1,
   },
   {
     playlistName: "playlist2",
     video_counts: 3,
     category: "Cats",
+    id: 1,
   },
   {
     playlistName: "playlist2",
     video_counts: 3,
     category: "Cats",
+    id: 1,
   },
 ];
 
@@ -50,7 +54,11 @@ const Playlists = () => {
             {placeholderPlaylists.map((playlist) => {
               return (
                 <div className="playlist-video">
-                  <p className="playlist-video-idv">{playlist.playlistName}</p>
+                  <Link to={`../playlistinfo/${playlist.id}`}>
+                    <p className="playlist-video-idv">
+                      {playlist.playlistName}
+                    </p>
+                  </Link>
                   <p className="playlist-video-idv">{playlist.video_counts} </p>
                   <p className="playlist-video-idv">{playlist.category}</p>
                   <button className="btn">DELETE</button>
