@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import "./videoinfo.css";
 import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
@@ -6,17 +6,33 @@ import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
 
 const Videoinfo = () => {
   const { id } = useParams();
+  const [video, setVideo] = useState(null);
+  // TODO: Remove this. Just conneciton test.
+  // const [message, setMessage] = useState("");
 
-  // TODO: Replace this with API call to get SQL data
-  const videoId = "8Go6dHuylyM";
+  useEffect(() => {
+    try {
+      fetch(`http://localhost:8080/video/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setVideo(data);
+        });
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
 
   return (
     <div>
       <h2>
         Video {id}
       </h2>
+      <div>
+        Video is {JSON.stringify(video)}
+      </div>
       <div className="video-card">
-        <YouTubeEmbed videoId={videoId}/>
+        <YouTubeEmbed videoId={id}/>
       </div>
       <ul>
         <li>Channel: placeholder</li>
