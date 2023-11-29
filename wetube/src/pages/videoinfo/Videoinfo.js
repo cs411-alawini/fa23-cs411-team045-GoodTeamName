@@ -21,7 +21,7 @@ const Videoinfo = () => {
     } catch (err) {
       console.error(err);
     }
-  }, []);
+  },[id]);
 
   return (
     <div>
