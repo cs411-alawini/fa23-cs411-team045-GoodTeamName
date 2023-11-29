@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import "./videoinfo.css";
 import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
@@ -72,7 +72,7 @@ const Videoinfo = () => {
         {video.videoTitle}
       </h2>
       <div className="video-card">
-        <YouTubeEmbed videoId={videoId}/>
+        <YouTubeEmbed videoId={id}/>
       </div>
       <ul>
         <li>Channel: {video.channel}</li>
