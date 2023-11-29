@@ -1,31 +1,84 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./playlists.css";
 
-const placeholderPlaylists = [
-  {
-    playlistName: "playlist1",
-    video_counts: 3,
-    category: "Cats",
-    id: 1,
-  },
-  {
-    playlistName: "playlist2",
-    video_counts: 3,
-    category: "Cats",
-    id: 1,
-  },
-  {
-    playlistName: "playlist2",
-    video_counts: 3,
-    category: "Cats",
-    id: 1,
-  },
-];
+// const placeholderPlaylists = [
+//   {
+//     playlistName: "playlist1",
+//     video_counts: 3,
+//     category: "Cats",
+//     id: 1,
+//   },
+//   {
+//     playlistName: "playlist2",
+//     video_counts: 3,
+//     category: "Cats",
+//     id: 1,
+//   },
+//   {
+//     playlistName: "playlist2",
+//     video_counts: 3,
+//     category: "Cats",
+//     id: 1,
+//   },
+// ];
 
 const Playlists = () => {
   const { id } = useParams();
+  const [playlist, setPlaylist] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    const fetchPlaylists = async () => {
+      try {
+        const userID = 1;
+        const response = await fetch(
+          `http://localhost:8080/playlist?userID=${userID}`,
+          {
+            method: "GET",
+          }
+        );
+        const data = await response.json();
+
+        setLoading(false);
+
+        if (data.length === 0) {
+          // no playlists found
+          setFailed(true);
+        } else {
+          setPlaylist(data);
+        }
+      } catch (err) {
+        console.error(err);
+        setLoading(false);
+        setFailed(true);
+      }
+    };
+
+    fetchPlaylists();
+  }, [id]);
+
+  // TODO: Replace with standardized loading graphic
+  if (loading) {
+    return (
+      <div>
+        <h2>Playlists loading...</h2>
+      </div>
+    );
+  }
+
+  // TODO: replace with standardized failure page
+  if (failed) {
+    return (
+      <div>
+        <h2>Playlists not found :(</h2>
+      </div>
+    );
+  }
+
   // const { error, playlist } = useDocument("projects", id); // id is the playlist id
 
   // const { deleteDocument } = useFirestore("projects");
@@ -51,7 +104,7 @@ const Playlists = () => {
               <p className="playlist-video-idv">Majority of the Category</p>
               <p className="playlist-video-idv">Delete</p>
             </div>
-            {placeholderPlaylists.map((playlist) => {
+            {playlist.map((playlist) => {
               return (
                 <div className="playlist-video">
                   <Link to={`../playlistinfo/${playlist.id}`}>
