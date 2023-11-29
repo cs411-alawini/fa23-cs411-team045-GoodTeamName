@@ -37,3 +37,18 @@ a {
   padding: 5px 20px;
   width: 100%;
 }
+
+.btn {
+  background: #384256;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid var(--primary-color);
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}

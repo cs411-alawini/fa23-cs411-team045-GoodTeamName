@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 // import { login, isPending, error, useLogin } from "../../hooks/useLogin";
@@ -16,7 +17,7 @@ const Login = () => {
 
   return (
     <div className="login-main">
-      <form className="auth-form">
+      <form className="login-auth-form">
         <h2 className="login-title">Login</h2>
 
         <label className="login-name">
@@ -37,6 +38,15 @@ const Login = () => {
             value={password}
           />
         </label>
+
+        <Link to="app" className="listItem">
+          <button className="btn login-btn-1">Login</button>
+        </Link>
+
+        <Link to="signup" className="listItem">
+          <button className="btn">Sign up</button>
+        </Link>
+
         {/* 
       {!isPending ? (
         <button className="btn">Login</button>
