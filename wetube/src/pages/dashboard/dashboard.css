@@ -20,12 +20,12 @@
 .label {
   color: #a0aec0; /* text-gray-400 */
   margin-bottom: 0.25rem; /* mb-1 */
+  font-size: 3rem; /* text-lg */
 }
 
 .value {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.5rem; /* text-lg */
 }
-
 
 .search-input {
   width: 100%;
@@ -62,7 +62,7 @@
   height: 10rem; /* h-40 */
   margin-bottom: 1rem; /* mb-4 */
   border-radius: 0.375rem; /* rounded-md */
-  background-image: url('https://placehold.co/200x150');
+  background-image: url("https://placehold.co/200x150");
   background-size: cover;
 }
 

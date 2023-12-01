@@ -51,6 +51,8 @@
 .search-bar {
   color: #a0aec0; /* text-gray-400 */
   margin-bottom: 0.25rem; /* mb-1 */
+  display: flex; /* This will align children (input and button) inline */
+  align-items: center; /* This will vertically center the children */
 }
 
 .search-section {

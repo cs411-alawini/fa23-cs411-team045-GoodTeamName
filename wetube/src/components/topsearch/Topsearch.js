@@ -13,12 +13,19 @@ const Topsearch = () => {
       </div>
 
       <div className="icons">
-        <div class="search-section">
-          <form action="" class="search-bar">
-          <input type="text" placeholder="Search channel" className="search-input" />
-          <button type="submit"><img src={search} alt="" className="icon" /></button>
+        <div className="search-section">
+          <form action="" className="search-bar">
+            <button type="submit" className="search-button">
+              <img src={search} alt="Search" className="icon" />
+            </button>
+            <input
+              type="text"
+              placeholder="Search channel"
+              className="search-input"
+            />
           </form>
         </div>
+
         <div className="user">
           <img src={logo} alt="" className="icon" />
           <span>User name</span>

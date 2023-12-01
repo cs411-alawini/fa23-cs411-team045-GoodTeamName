@@ -1,0 +1,32 @@
+.video-card {
+  cursor: pointer;
+  /* Add styles for your video card here */
+  margin: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+}
+
+.label {
+  color: #a0aec0; /* text-gray-400 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.youtube-embed-container {
+  /* Your existing styles for the YouTube embed container */
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.youtube-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

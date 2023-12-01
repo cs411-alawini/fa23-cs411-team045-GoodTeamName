@@ -2,7 +2,9 @@ import React from "react";
 import "./trending.css"; // Importing the CSS file
 import Bar from "../../components/barchart/Barchart";
 import Pie from "../../components/piechart/Piechart";
-import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
+import Videoinfo from "../videoinfo/Videoinfo";
+import Videogrid from "../../components/videogrid/Videogrid";
+import { Route, Routes } from "react-router-dom";
 
 const Trending = () => {
   return (
@@ -27,17 +29,11 @@ const Trending = () => {
       </div>
       <hr className="divider" />
       {/* Recommended Videos Section */}
-      <div className="videos-grid">
-        <div className="video-card">
-          <YouTubeEmbed videoId="-XFBVAAzXjc" />
-          <div className="label">Recommended Trending Video 1</div>
-          <div className="value">New American Nazis</div>
-        </div>
-        <div className="video-card">
-          <YouTubeEmbed videoId="dVihVavsYE4" />
-          <div className="label">Recommended Trending Video 2</div>
-          <div className="value">THIS IS HOW I CARRY ON DOOMFIST</div>
-        </div>
+      <div>
+        <Routes>
+          <Route path="/app/videoinfo/:videoId" element={<Videoinfo />} />
+        </Routes>
+        <Videogrid />
       </div>
     </div>
   );
