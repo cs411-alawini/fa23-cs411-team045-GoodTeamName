@@ -3,9 +3,9 @@ import "./dashboard.css"; // Importing the CSS file
 import Bar from "../../components/barchart/Barchart";
 import Pie from "../../components/piechart/Piechart";
 import Videoinfo from "../videoinfo/Videoinfo";
-import Videogrid from "../../components/videogrid/Videogrid";
+import VideoButton from "../../components/videobutton/Videobutton";
 import { Route, Routes } from "react-router-dom";
-import Playlists from "../playlists/Playlists";
+import Playlistinfo from "../playlistinfo/Playlistinfo";
 
 const Dashboard = () => {
   return (
@@ -31,9 +31,15 @@ const Dashboard = () => {
       {/* Recommended Videos Section */}
       <div>
         <Routes>
-          <Route path="/app/videoinfo/:videoId" element={<Videoinfo />} />
+          <Route
+            path="/app/playlistinfo/:playlistId"
+            element={<Playlistinfo />}
+          />
         </Routes>
-        <Videogrid />
+        <div className="video-grid">
+          <VideoButton videoId="-XFBVAAzXjc" />
+          <VideoButton videoId="--hjHKgm67g" />
+        </div>
       </div>
     </div>
   );
