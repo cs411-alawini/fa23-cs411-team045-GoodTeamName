@@ -31,6 +31,23 @@ router.get("/:id", (req, res) => {
   });
 });
 
+
+// Return the videoIDs for all videos contained in a playlist
+router.get("/:id/v", (req, res) => {
+  let sql = 
+  `SELECT v.videoID
+   FROM Contain c JOIN Video v ON (c.videoID = v.videoID)
+   WHERE c.playListID = ${req.params.id};`;
+
+  connection.query(sql, function (err, result) {
+    if (err) {
+      res.send(err);
+      return;
+    }
+    res.json(result);
+  })
+});
+
 // to-do: add a route to remove a playlist from the database
 router.delete("/:id", (req, res) => {
   let sql = `DELETE FROM UserPlaylist WHERE playlistID="${req.params.id}";`;
