@@ -16,12 +16,12 @@ const PlaylistButton = ({ playlistId }) => {
 
   return (
     <button onClick={handleClick} className="playlist-button">
+      <div className="playlist-label">Your Playlist</div>
       <img
         src={thumbnailUrl}
         alt="Playlist Thumbnail"
         className="playlist-thumbnail"
       />
-      <div className="playlist-label">Your Playlist</div>
     </button>
   );
 };
