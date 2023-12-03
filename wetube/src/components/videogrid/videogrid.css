@@ -1,16 +1,7 @@
-.label {
-  color: #a0aec0; /* text-gray-400 */
-  margin-bottom: 0.25rem; /* mb-1 */
-}
-
-.value {
-  font-size: 1.125rem; /* text-lg */
-}
-
 .video-grid {
   display: flex;
   justify-content: space-around; /* Adjust as needed for your design */
-  gap: 5rem;
+  gap: 3rem;
 }
 
 /* Responsive grid */

@@ -2,17 +2,21 @@
   cursor: pointer;
   /* Add styles for your video card here */
   margin: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s ease-in-out;
+  padding: 1rem;
+  background-color: #4a5568; /* bg-gray-700 */
+  border-radius: 0.5rem;
 }
 
 .video-card:hover {
   transform: scale(1.03);
 }
 
-.label {
+.intro {
   color: #a0aec0; /* text-gray-400 */
   margin-bottom: 0.25rem; /* mb-1 */
+  font-size: 2rem;
 }
 
 .youtube-embed-container {

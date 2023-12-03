@@ -13,8 +13,8 @@ export default function Pie() {
           ],
         },
       ]}
-      width={400}
-      height={200}
+      width={300}
+      height={150}
     />
   );
 }

@@ -13,7 +13,7 @@ const VideoButton = ({ videoId }) => {
 
   return (
     <div className="video-card" onClick={handleOuterClick}>
-      <div className="label">Recommended Trending Video</div>
+      <div className="intro">Recommended Trending Video</div>
       <div
         className="youtube-embed-container"
         onClick={(e) => e.stopPropagation()}

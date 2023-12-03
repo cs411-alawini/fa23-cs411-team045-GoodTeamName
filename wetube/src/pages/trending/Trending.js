@@ -11,21 +11,20 @@ const Trending = () => {
     <div className="trending">
       {/* Header Section */}
       <div className="header">
-        <div className="date-section">
-          <div className="label">Date</div>
-          <div className="value">April 9, 2023</div>
+        <div className="left-section">
+          <div className="date">
+            <div className="label">Date</div>
+            <div className="value">April 9, 2023</div>
+          </div>
+          <div className="video-counts">
+            <div className="label">Total Videos</div>
+            <div className="value">145 Videos</div>
+          </div>
         </div>
-        <div className="bar-chart">
+        <div className="right-section">
           <Bar />
-        </div>
-        <div className="category-section">
           <Pie />
         </div>
-      </div>
-      {/* Stats Section */}
-      <div className="stats">
-        <div className="label">Total Videos</div>
-        <div className="value">145 Videos</div>
       </div>
       <hr className="divider" />
       {/* Recommended Videos Section */}
