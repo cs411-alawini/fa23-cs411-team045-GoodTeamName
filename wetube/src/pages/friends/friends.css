@@ -1,0 +1,35 @@
+#content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #recommendations {
+    flex: 2;
+    margin-right: 20px;
+  }
+  
+  #friends-list {
+    flex: 1;
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+  }
+  
+  .friend, .recommendation {
+    margin-bottom: 20px;
+  }
+  
+  .friend img, .recommendation img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .friend .name, .recommendation .name {
+    font-weight: bold;
+  }
+  
+  .recommendation .common-interest {
+    font-size: 0.9em;
+    color: #666;
+  }
+  

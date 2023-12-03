@@ -38,7 +38,7 @@ function App() {
         <Route path="app" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="trending" element={<Trending />} />
-          <Route path="friends" esslement={<Friends />} />
+          <Route path="friends" element={<Friends />} />
           <Route path="playlists" element={<Playlists />} />
           <Route path="videoinfo/:id" element={<Videoinfo />} />
           <Route path="playlistinfo/:id" element={<Playlistinfo />} />
