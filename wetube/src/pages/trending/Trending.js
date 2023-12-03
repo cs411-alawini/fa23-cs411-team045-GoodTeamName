@@ -3,7 +3,7 @@ import "./trending.css"; // Importing the CSS file
 import Bar from "../../components/barchart/Barchart";
 import Pie from "../../components/piechart/Piechart";
 import Videoinfo from "../videoinfo/Videoinfo";
-import Videogrid from "../../components/videogrid/Videogrid";
+import VideoButton from "../../components/videobutton/Videobutton";
 import { Route, Routes } from "react-router-dom";
 
 const Trending = () => {
@@ -32,7 +32,10 @@ const Trending = () => {
         <Routes>
           <Route path="/app/videoinfo/:videoId" element={<Videoinfo />} />
         </Routes>
-        <Videogrid />
+        <div className="video-grid">
+          <VideoButton videoId="-XFBVAAzXjc" />
+          <VideoButton videoId="--hjHKgm67g" />
+        </div>
       </div>
     </div>
   );

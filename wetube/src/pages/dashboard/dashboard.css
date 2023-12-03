@@ -50,3 +50,16 @@
   margin: 1.5rem 0; /* my-6 */
   border-color: #4a5568; /* border-gray-700 */
 }
+
+.video-grid {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed for your design */
+  gap: 3rem;
+}
+
+/* Responsive grid */
+@media (max-width: 600px) {
+  .video-grid {
+    flex-direction: column;
+  }
+}
