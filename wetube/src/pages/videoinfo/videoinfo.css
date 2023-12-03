@@ -1,10 +1,35 @@
-h2 {
+.video-title {
     font-size: 20pt;
     font-weight: bold;
+    text-align: center;
+    /* background-color: #191e26; */
+    padding: 10px;
+    /* border-radius: 0.5rem; */
 }
 
-.video-card {
-    width: 70%;
+.video-info {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.video-card.no-side-margin {
+    margin: 10px 0;
+}
+
+.video-details {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem; /* p-4 */
+    background-color: #4a5568; /* bg-gray-700 */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    justify-content: space-around;
+}
+
+.video-detail {
+    text-align: center;
+}
+
+.detail-value {
+    font-size: 1.5rem;
 }
