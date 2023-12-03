@@ -8,7 +8,8 @@ import "./login.css";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const { login, isPending, error } = useLogin();
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState("");
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -44,7 +45,7 @@ const Login = () => {
         </Link>
 
         <Link to="signup" className="listItem">
-          <button className="btn">Sign up</button>
+          <input type="submit" name="login" value="Log In" />
         </Link>
 
         {/* 

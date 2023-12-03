@@ -2,7 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import "./playlists.css";
+import userEvent from "@testing-library/user-event";
 
 // const placeholderPlaylists = [
 //   {
@@ -30,6 +34,7 @@ const Playlists = () => {
   const [playlist, setPlaylist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
+  const [toDelete, setToDelete] = useState("");
 
   useEffect(() => {
     const fetchPlaylists = async () => {
@@ -61,6 +66,15 @@ const Playlists = () => {
     fetchPlaylists();
   }, [id]);
 
+  useEffect(() => {
+    if (toDelete !== "") {
+      const newPlaylist = playlist.filter(
+        (playlist) => playlist.playlistID !== toDelete
+      );
+      setPlaylist(newPlaylist);
+    }
+  }, [toDelete, playlist]);
+
   // TODO: Replace with standardized loading graphic
   if (loading) {
     return (
@@ -85,11 +99,31 @@ const Playlists = () => {
   // const { user } = useAuthContext();
   // const history = useHistory();
 
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   deleteDocument(project.id);
-  //   history.push("/");
-  // };
+  const handleClicks = (playlistID) => {
+    // to Delete the playlist
+    handleDeleteButtonClick(playlistID);
+  };
+
+  const handleDeleteButtonClick = async (playlistID) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8080/playlist/${playlistID}`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (response.ok) {
+        toast.success("Playlist deleted successfully");
+        console.log("Playlist deleted successfully");
+        setToDelete(playlistID);
+      } else {
+        // Handle error response
+        console.error(`Failed to delete playlist. Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Error deleting playlist:", error);
+    }
+  };
 
   return (
     <div className="playlist-container">
@@ -106,7 +140,7 @@ const Playlists = () => {
             </div>
             {playlist.map((playlist) => {
               return (
-                <div className="playlist-video">
+                <div className="playlist-video" key={playlist.playlistID}>
                   <Link to={`../playlistinfo/${playlist.id}`}>
                     <p className="playlist-video-idv">
                       {playlist.playlistName}
@@ -114,7 +148,13 @@ const Playlists = () => {
                   </Link>
                   <p className="playlist-video-idv">{playlist.video_counts} </p>
                   <p className="playlist-video-idv">{playlist.category}</p>
-                  <button className="btn">DELETE</button>
+                  <button
+                    className="btn"
+                    onClick={() => handleClicks(playlist.playlistID)}
+                  >
+                    DELETE
+                  </button>
+                  <ToastContainer />
                 </div>
               );
             })}

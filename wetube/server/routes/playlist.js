@@ -31,9 +31,9 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// to-do: add a route to post a playlist to the database
-router.post("/", (req, res) => {
-  let sql = `INSERT INTO UserPlaylist (playlistName, userID) VALUES ("${req.body.playlistName}", "${req.body.userID}");`;
+// to-do: add a route to remove a playlist from the database
+router.delete("/:id", (req, res) => {
+  let sql = `DELETE FROM UserPlaylist WHERE playlistID="${req.params.id}";`;
 
   connection.query(sql, function (err, result) {
     if (err) {
@@ -44,9 +44,11 @@ router.post("/", (req, res) => {
   });
 });
 
-// to-do: add a route to remove a playlist from the database
-router.delete("/:id", (req, res) => {
-  let sql = `DELETE FROM UserPlaylist WHERE playlistID="${req.params.id}";`;
+// down below are routes need "req.body" to get data from front-end
+
+// to-do: add a route to post a playlist to the database
+router.post("/", (req, res) => {
+  let sql = `INSERT INTO UserPlaylist (playlistName, userID) VALUES ("${req.body.playlistName}", "${req.body.userID}");`;
 
   connection.query(sql, function (err, result) {
     if (err) {

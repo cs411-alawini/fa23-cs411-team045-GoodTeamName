@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import "./videoinfo.css";
 import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
 
@@ -42,37 +42,31 @@ const Videoinfo = () => {
       setLoading(false);
       setFailed(true);
     }
-  },[id]);
+  }, [id]);
 
   // TODO: Replace with standardized loading graphic
   if (loading) {
     return (
       <div>
-        <h2>
-          Video loading...
-        </h2>
+        <h2>Video loading...</h2>
       </div>
-    )
+    );
   }
 
   // TODO: replace with standardized failure page
-  if (failed) { 
+  if (failed) {
     return (
       <div>
-        <h2>
-          Video not found :(
-        </h2>
+        <h2>Video not found :(</h2>
       </div>
-    )
+    );
   }
 
   return (
     <div>
-      <h2>
-        {video.videoTitle}
-      </h2>
+      <h2>{video.videoTitle}</h2>
       <div className="video-card">
-        <YouTubeEmbed videoId={id}/>
+        <YouTubeEmbed videoId={id} />
       </div>
       <ul>
         <li>Channel: {video.channel}</li>

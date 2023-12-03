@@ -14,6 +14,10 @@ const playlist = require("./routes/playlist");
 
 app.use("/playlist", playlist);
 
+const user = require("./routes/user");
+
+app.use("/user", user);
+
 app.listen(8080, () => {
   console.log(`Server is running on port 8080.`);
 });
