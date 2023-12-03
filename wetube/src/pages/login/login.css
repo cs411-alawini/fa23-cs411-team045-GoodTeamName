@@ -30,7 +30,7 @@ a {
   padding: 20px; /* Decreased padding to make the form smaller */
   border: 1px solid #ddd;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
-  color: rgb(196, 233, 255);
+  color: black;
 }
 
 .login-title {

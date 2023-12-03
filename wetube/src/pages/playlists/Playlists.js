@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "./playlists.css";
-import userEvent from "@testing-library/user-event";
 
 // const placeholderPlaylists = [
 //   {
@@ -35,34 +34,36 @@ const Playlists = () => {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
   const [toDelete, setToDelete] = useState("");
+  const [showForm, setShowForm] = useState(false);
+  const [playlistName, setPlaylistName] = useState("");
+
+  const fetchPlaylists = async () => {
+    try {
+      const userID = 1;
+      const response = await fetch(
+        `http://localhost:8080/playlist?userID=${userID}`,
+        {
+          method: "GET",
+        }
+      );
+      const data = await response.json();
+
+      setLoading(false);
+
+      if (data.length === 0) {
+        // no playlists found
+        setFailed(true);
+      } else {
+        setPlaylist(data);
+      }
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+      setFailed(true);
+    }
+  };
 
   useEffect(() => {
-    const fetchPlaylists = async () => {
-      try {
-        const userID = 1;
-        const response = await fetch(
-          `http://localhost:8080/playlist?userID=${userID}`,
-          {
-            method: "GET",
-          }
-        );
-        const data = await response.json();
-
-        setLoading(false);
-
-        if (data.length === 0) {
-          // no playlists found
-          setFailed(true);
-        } else {
-          setPlaylist(data);
-        }
-      } catch (err) {
-        console.error(err);
-        setLoading(false);
-        setFailed(true);
-      }
-    };
-
     fetchPlaylists();
   }, [id]);
 
@@ -72,8 +73,14 @@ const Playlists = () => {
         (playlist) => playlist.playlistID !== toDelete
       );
       setPlaylist(newPlaylist);
+      toast.success("Playlist deleted successfully");
+      setToDelete("");
     }
   }, [toDelete, playlist]);
+
+  useEffect(() => {
+    fetchPlaylists();
+  }, [playlist]);
 
   // TODO: Replace with standardized loading graphic
   if (loading) {
@@ -93,13 +100,11 @@ const Playlists = () => {
     );
   }
 
-  // const { error, playlist } = useDocument("projects", id); // id is the playlist id
+  // Delete playlist
+  // Delete playlist
+  // Delete playlist
 
-  // const { deleteDocument } = useFirestore("projects");
-  // const { user } = useAuthContext();
-  // const history = useHistory();
-
-  const handleClicks = (playlistID) => {
+  const handleDelete = (playlistID) => {
     // to Delete the playlist
     handleDeleteButtonClick(playlistID);
   };
@@ -113,7 +118,6 @@ const Playlists = () => {
         }
       );
       if (response.ok) {
-        toast.success("Playlist deleted successfully");
         console.log("Playlist deleted successfully");
         setToDelete(playlistID);
       } else {
@@ -125,11 +129,77 @@ const Playlists = () => {
     }
   };
 
+  // Create playlist
+  // Create playlist
+  // Create playlist
+
+  const handleAddPlaylist = () => {
+    setShowForm(true);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    // Add your API call to create a new playlist here
+    try {
+      const response = await fetch("http://localhost:8080/playlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          playlistName: playlistName,
+          userID: 1, // Replace with the actual user ID
+        }),
+      });
+
+      if (response.ok) {
+        setShowForm(false);
+        setPlaylistName("");
+      } else {
+        console.error("Failed to create playlist");
+      }
+    } catch (error) {
+      console.error("Error creating playlist:", error);
+    }
+  };
+
+  // return
+  // return
+  // return
+
   return (
     <div className="playlist-container">
       <div>
         <div className="playlist-detail">
-          <h2 className="playlist-title">Playlists</h2>
+          <div className="playlist-title-container">
+            <h2 className="playlist-title">Playlists</h2>
+            <button
+              className="btn"
+              onClick={() => {
+                handleAddPlaylist();
+              }}
+            >
+              Create New Playlist
+            </button>
+          </div>
+
+          {showForm && (
+            <form onSubmit={handleFormSubmit}>
+              <label>
+                Playlist Name:
+                <input
+                  className="playlist-input"
+                  type="text"
+                  value={playlistName}
+                  onChange={(e) => setPlaylistName(e.target.value)}
+                />
+              </label>
+              <button className="created-btn" type="submit">
+                Create Playlist
+              </button>
+            </form>
+          )}
 
           <div className="contained-videos">
             <div className="playlist-video-desc">
@@ -150,7 +220,7 @@ const Playlists = () => {
                   <p className="playlist-video-idv">{playlist.category}</p>
                   <button
                     className="btn"
-                    onClick={() => handleClicks(playlist.playlistID)}
+                    onClick={() => handleDelete(playlist.playlistID)}
                   >
                     DELETE
                   </button>
@@ -162,27 +232,6 @@ const Playlists = () => {
         </div>
       </div>
     </div>
-
-    // <div className="playlist-container">
-    //   <div>
-    //     <div className="playlist-detail">
-    //       <h2 className="page-title">{playlist.playlistName}</h2>
-
-    //       <h4>Playlist contains:</h4>
-    //       <div className="contained videos">
-    //         {/* {playlist.assignedUsersList.map((user) => (
-    //           <div className="assignee" key={user.id}>
-    //             <Avatar src={user.photoURL} />
-    //             <span>{user.displayName} </span>
-    //           </div>
-    //         ))} */}
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <button className="btn" onClick={handleClick}>
-    //   Mark as Complete
-    // </button>
-    // </div>
   );
 };
 

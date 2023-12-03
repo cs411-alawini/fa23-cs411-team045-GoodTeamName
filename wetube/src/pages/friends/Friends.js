@@ -14,18 +14,22 @@ const mockRecommendations = [
   // Add more recommendations...
 ];
 
-const Friend = ({ friend }) => (
+const Friend = ({ friend, onDeleteFriend }) => (
   <div className="friend">
     <img src={friend.image} alt={friend.name} />
     <div className="name">{friend.name}</div>
+    <button onClick={() => onDeleteFriend(friend)}>Delete Friend</button>
   </div>
 );
 
-const Recommendation = ({ recommendation }) => (
+// ...
+
+const Recommendation = ({ recommendation, onAddFriend }) => (
   <div className="recommendation">
     <img src={recommendation.image} alt={recommendation.name} />
     <div className="name">{recommendation.name}</div>
     <div className="common-interest">She also likes {recommendation.commonInterest}</div>
+    <button onClick={() => onAddFriend(recommendation)}>Add Friend</button>
   </div>
 );
 
@@ -39,20 +43,42 @@ const FriendPage = () => {
     setRecommendations(mockRecommendations);
   }, []);
 
+  const handleAddFriend = (friend) => {
+    setFriendsList([...friendsList, friend]);
+    setRecommendations(recommendations.filter((r) => r !== friend));
+  };
+
+
+  const handleDeleteFriend = (friend) => {
+    setFriendsList(friendsList.filter((f) => f !== friend));
+    setRecommendations([...recommendations, friend]);
+  };
+
+
   return (
     <div id="content">
       <div id="recommendations">
         {recommendations.map((recommendation, i) => (
-          <Recommendation key={i} recommendation={recommendation} />
+          <Recommendation
+            key={i}
+            recommendation={recommendation}
+            onAddFriend={handleAddFriend}
+          />
         ))}
       </div>
       <div id="friends-list">
         {friendsList.map((friend, i) => (
-          <Friend key={i} friend={friend} />
+          <Friend
+            key={i}
+            friend={friend}
+            onDeleteFriend={handleDeleteFriend}
+          />
         ))}
       </div>
     </div>
   );
 };
+
+// ...
 
 export default FriendPage;

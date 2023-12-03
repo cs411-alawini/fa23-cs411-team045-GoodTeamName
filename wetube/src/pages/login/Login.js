@@ -1,24 +1,53 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
-
-// import { login, isPending, error, useLogin } from "../../hooks/useLogin";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   login(email, password);
-  // };
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsPending(true);
+    setError("");
+
+    try {
+      const response = await fetch(`http://localhost:8080/user/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      console.log("Response Status:", response.status);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        // Redirect to the home page
+        navigate("/app");
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || "Failed to login");
+        toast.error("Failed to login");
+      }
+    } catch (error) {
+      setError("Failed to login");
+      toast.error("Failed to login");
+    } finally {
+      setIsPending(false);
+    }
+  };
 
   return (
     <div className="login-main">
-      <form className="login-auth-form">
+      <form className="login-auth-form" onSubmit={handleFormSubmit}>
         <h2 className="login-title">Login</h2>
 
         <label className="login-name">
@@ -40,24 +69,10 @@ const Login = () => {
           />
         </label>
 
-        <Link to="app" className="listItem">
-          <button className="btn login-btn-1">Login</button>
-        </Link>
-
-        <Link to="signup" className="listItem">
-          <input type="submit" name="login" value="Log In" />
-        </Link>
-
-        {/* 
-      {!isPending ? (
-        <button className="btn">Login</button>
-      ) : (
-        <button className="btn" disabled>
-          loading
+        <button type="submit" className="btn login-btn-1" disabled={isPending}>
+          {isPending ? "Logging in..." : "Login"}
         </button>
-      )}
-
-      {error && <div className="error">{error} </div>} */}
+        <ToastContainer />
       </form>
     </div>
   );
