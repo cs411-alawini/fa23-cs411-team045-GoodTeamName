@@ -32,10 +32,10 @@ router.get("/:id", (req, res) => {
 });
 
 
-// Return the videoIDs for all videos contained in a playlist
+// Return info for all videos contained in a playlist
 router.get("/:id/v", (req, res) => {
   let sql = 
-  `SELECT v.videoID
+  `SELECT v.videoID, v.videoTitle, v.channel, v.videoView
    FROM Contain c JOIN Video v ON (c.videoID = v.videoID)
    WHERE c.playListID = ${req.params.id};`;
 
