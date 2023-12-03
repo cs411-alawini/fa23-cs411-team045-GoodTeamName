@@ -232,27 +232,6 @@ const Playlists = () => {
         </div>
       </div>
     </div>
-
-    // <div className="playlist-container">
-    //   <div>
-    //     <div className="playlist-detail">
-    //       <h2 className="page-title">{playlist.playlistName}</h2>
-
-    //       <h4>Playlist contains:</h4>
-    //       <div className="contained videos">
-    //         {/* {playlist.assignedUsersList.map((user) => (
-    //           <div className="assignee" key={user.id}>
-    //             <Avatar src={user.photoURL} />
-    //             <span>{user.displayName} </span>
-    //           </div>
-    //         ))} */}
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <button className="btn" onClick={handleClick}>
-    //   Mark as Complete
-    // </button>
-    // </div>
   );
 };
 
