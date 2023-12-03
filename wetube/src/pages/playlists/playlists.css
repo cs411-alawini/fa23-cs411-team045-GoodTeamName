@@ -11,7 +11,14 @@
   border-radius: 4px;
 }
 
-.playlist-detail .playlist-title {
+.playlist-detail .playlist-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playlist-detail .playlist-title-container .playlist-title {
   color: var(--text-color);
   margin-bottom: 10px;
   font-size: 20pt;
@@ -58,4 +65,28 @@
 
 .playlist-detail .contained-videos div:nth-of-type(even) {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.created-btn {
+  background: #384256;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid var(--primary-color);
+}
+
+.created-btn:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.playlist-input {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
 }
