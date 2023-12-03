@@ -3,26 +3,30 @@
   /* Add styles for your video card here */
   margin: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   padding: 1rem;
-  background-color: #4a5568; /* bg-gray-700 */
+  background-color: #4a5568;
+  /* bg-gray-700 */
   border-radius: 0.5rem;
 }
 
 .video-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.1);
 }
 
 .intro {
-  color: #a0aec0; /* text-gray-400 */
-  margin-bottom: 0.25rem; /* mb-1 */
+  color: #a0aec0;
+  /* text-gray-400 */
+  margin-bottom: 0.25rem;
+  /* mb-1 */
   font-size: 2rem;
 }
 
 .youtube-embed-container {
   /* Your existing styles for the YouTube embed container */
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
 }

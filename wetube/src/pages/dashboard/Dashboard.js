@@ -2,8 +2,7 @@ import React from "react";
 import "./dashboard.css"; // Importing the CSS file
 import Bar from "../../components/barchart/Barchart";
 import Pie from "../../components/piechart/Piechart";
-import Videoinfo from "../videoinfo/Videoinfo";
-import VideoButton from "../../components/videobutton/Videobutton";
+import Playlistbutton from "../../components/playlistbutton/Playlistbutton";
 import { Route, Routes } from "react-router-dom";
 import Playlistinfo from "../playlistinfo/Playlistinfo";
 
@@ -37,8 +36,8 @@ const Dashboard = () => {
           />
         </Routes>
         <div className="video-grid">
-          <VideoButton videoId="-XFBVAAzXjc" />
-          <VideoButton videoId="--hjHKgm67g" />
+          <Playlistbutton playlistId="19" />
+          <Playlistbutton playlistId="28" />
         </div>
       </div>
     </div>
