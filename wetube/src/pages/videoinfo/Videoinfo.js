@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./videoinfo.css";
 import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
+import getCategoryName from "../../GetCategory";
 
 /* Video object structure
 {
@@ -63,16 +64,16 @@ const Videoinfo = () => {
   }
 
   return (
-    <div>
-      <h2>{video.videoTitle}</h2>
-      <div className="video-card">
+    <div className="video-info">
+      <h2 className="video-title">{video.videoTitle}</h2>
+      <div className="video-card no-side-margin">
         <YouTubeEmbed videoId={id} />
       </div>
-      <ul>
-        <li>Channel: {video.channel}</li>
-        <li>Views: {video.videoView}</li>
-        <li>Likes: {video.videoLikes}</li>
-        <li>Category: {video.videoCategory}</li>
+      <ul className="video-details">
+        <li className="video-detail">Channel:<div className="detail-value">{video.channel}</div></li>
+        <li className="video-detail">Views:<div className="detail-value">{video.videoView.toLocaleString("en-US")}</div></li>
+        <li className="video-detail">Likes:<div className="detail-value">{video.videoLikes.toLocaleString("en-US")}</div></li>
+        <li className="video-detail">Category:<div className="detail-value">{getCategoryName(video.videoCategory)}</div></li>
       </ul>
     </div>
   );
