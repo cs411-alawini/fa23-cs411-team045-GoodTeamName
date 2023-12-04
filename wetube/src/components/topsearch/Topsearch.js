@@ -5,6 +5,11 @@ import logo from "../../imgs/logo.png";
 import search from "../../imgs/search.svg";
 
 const Topsearch = () => {
+  const storedUser = sessionStorage.getItem("currentUser");
+  const data = JSON.parse(storedUser);
+  const user = data.user;
+  console.log(user);
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -27,8 +32,12 @@ const Topsearch = () => {
         </div>
 
         <div className="user">
-          <img src={logo} alt="" className="icon" />
-          <span>User name</span>
+          {user && (
+            <>
+              <img src={logo} alt="" className="icon" />
+              <span>{user.username}</span>
+            </>
+          )}
         </div>
       </div>
     </div>

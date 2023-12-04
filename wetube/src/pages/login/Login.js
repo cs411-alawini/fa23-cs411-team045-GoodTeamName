@@ -28,8 +28,9 @@ const Login = () => {
       console.log("Response Status:", response.status);
 
       if (response.ok) {
-        const data = await response.json();
-        console.log(data);
+        const user = await response.json();
+        console.log(user);
+        sessionStorage.setItem("currentUser", JSON.stringify(user));
         // Redirect to the home page
         navigate("/app");
       } else {

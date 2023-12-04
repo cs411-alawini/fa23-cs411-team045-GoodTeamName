@@ -43,23 +43,36 @@ router.post("/login", async (req, res) => {
         res.send(err);
         return;
       }
-      res.json(result);
       const user = result[0];
+      console.log(result);
 
       if (!user) {
         return res.status(401).json({ error: "Invalid username " });
       }
 
       // Compare the provided password with the hashed password
-      console.log(user);
       const passwordMatch = bcrypt.compare(password, user.userPassword);
 
       if (!passwordMatch) {
         return res.status(401).json({ error: "Invalid  password" });
       }
 
+      // Check if req.session is defined before setting properties
+      if (!req.session) {
+        return res.status(500).json({ error: "Session not available" });
+      }
+
       // Authentication successful
-      res.json({ message: "Login successful", user });
+      const userToSend = {
+        id: user.userID,
+        username: user.userName,
+        // Add other fields as needed
+      };
+
+      // Store user information in session storage
+      req.session.user = userToSend;
+
+      res.json({ message: "Login successful", user: userToSend });
     });
   } catch (error) {
     console.error(error);
