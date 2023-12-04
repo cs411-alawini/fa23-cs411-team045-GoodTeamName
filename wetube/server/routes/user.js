@@ -18,44 +18,27 @@ router.get("/:id", (req, res) => {
 });
 
 // to-do: add a route to create a user
-router.post("/signup", (req, res) => {
-  let sql = `INSERT INTO Users (username, password) VALUES ("${req.body.username}", "${req.body.password}");`;
+router.post("/signup", async (req, res) => {
+  try {
+    // Insert the new user into the database
+    let sql = `INSERT INTO Users (userName, userPassword, userRegion) VALUES ("${req.body.username}", "${req.body.password}", "${req.body.region}");`;
 
-  connection.query(sql, function (err, result) {
-    if (err) {
-      res.send(err);
-      return;
-    }
-    res.json(result);
-  });
+    connection.query(sql, function (err, result) {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Internal Server Error" });
+      }
+
+      res.json({
+        message: "Signup successful",
+        user: req.body,
+      });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
-
-// router.post("/signup", async (req, res) => {
-//   try {
-//     const { username, region, password } = req.body;
-
-//     // Hash the password
-//     const hashedPassword = await bcrypt.hash(password, 10);
-
-//     // Insert the new user into the database
-//     let sql = `INSERT INTO Users (username, region, password) VALUES (?, ?, ?);`;
-//     connection.query(
-//       sql,
-//       [username, region, hashedPassword],
-//       function (err, result) {
-//         if (err) {
-//           console.error(err);
-//           return res.status(500).json({ error: "Internal Server Error" });
-//         }
-
-//         res.json({ message: "Signup successful" });
-//       }
-//     );
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
 
 // to-do: add a route to login a user
 router.post("/login", async (req, res) => {
