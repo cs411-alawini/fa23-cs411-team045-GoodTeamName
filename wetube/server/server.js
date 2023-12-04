@@ -28,6 +28,10 @@ const user = require("./routes/user");
 
 app.use("/user", user);
 
+const friendslist = require("./routes/friendslist");
+
+app.use("/friendslist", friendslist);
+
 app.listen(8080, () => {
   console.log(`Server is running on port 8080.`);
 });
