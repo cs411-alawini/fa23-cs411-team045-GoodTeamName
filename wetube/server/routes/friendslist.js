@@ -77,37 +77,3 @@ router.delete("/:userId/friends/:friendId", (req, res) => {
 
 module.exports = router;
 
-
-
-
-// const express = require("express");
-// const router = express.Router();
-
-// // Mock data for friends and recommendations
-// const mockFriends = [
-//   { userId: 2, username: "John"},
-//   { userId: 3, username: "Emily"},
-// ];
-
-// const mockRecommendations = [
-//   { userId: 4, username: "Michael"},
-//   { userId: 5, username: "Sophia"},
-// ];
-
-// // Get friends list for a user
-// router.get("/:userId/friends", (req, res) => {
-//   const userId = parseInt(req.params.userId);
-//   const friends = mockFriends.filter((friend) => friend.userId === userId);
-//   res.json(friends);
-// });
-
-// // Get friend recommendations for a user
-// router.get("/:userId/recommendations", (req, res) => {
-//   const userId = parseInt(req.params.userId);
-//   const recommendations = mockRecommendations.filter(
-//     (recommendation) => recommendation.userId !== userId
-//   );
-//   res.json(recommendations);
-// });
-
-// module.exports = router;

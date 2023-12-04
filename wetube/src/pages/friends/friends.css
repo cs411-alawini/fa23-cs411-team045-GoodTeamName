@@ -1,35 +1,57 @@
 #content {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #recommendations {
-    flex: 2;
-    margin-right: 20px;
-  }
-  
-  #friends-list {
-    flex: 1;
-    border-left: 1px solid #ccc;
-    padding-left: 20px;
-  }
-  
-  .friend, .recommendation {
-    margin-bottom: 20px;
-  }
-  
-  .friend img, .recommendation img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-  
-  .friend .name, .recommendation .name {
-    font-weight: bold;
-  }
-  
-  .recommendation .common-interest {
-    font-size: 0.9em;
-    color: #666;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+}
+
+#recommendations {
+  flex: 2;
+  margin-right: 70px;
+}
+
+#friends-list {
+  flex: 1;
+  border-left: 1px solid #ccc;
+  padding-left: 30px;
+}
+
+.friend, .recommendation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.friend .details, .recommendation .details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.friend img, .recommendation img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friend .name, .recommendation .name {
+  font-weight: bold;
+}
+
+.recommendation .common-interest {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.friend button, .recommendation button {
+  border: none;
+  background-color: transparent;
+  color: #007BFF;
+  cursor: pointer;
+}
+
+.friend button:hover, .recommendation button:hover {
+  color: #0056b3;
+}
+
