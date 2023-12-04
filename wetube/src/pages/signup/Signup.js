@@ -3,13 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./signup.css";
 
-// import { login, isPending, error, useLogin } from "../../hooks/useLogin";
-
 const Login = () => {
   const [username, setUsername] = useState("");
   const [region, setRegion] = useState("");
   const [password, setPassword] = useState("");
-  // const { login, isPending, error } = useLogin();
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
