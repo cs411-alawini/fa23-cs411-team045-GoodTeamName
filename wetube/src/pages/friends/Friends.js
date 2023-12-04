@@ -1,84 +1,98 @@
-import React, { useEffect, useState } from 'react';
-import './friends.css';
 
-// Mock data
-const mockFriendsList = [
-  { name: 'Friend 1', image: 'https://via.placeholder.com/50' },
-  { name: 'Friend 2', image: 'https://via.placeholder.com/50' },
-  // Add more friends...
-];
-
-const mockRecommendations = [
-  { name: 'User 1', image: 'https://via.placeholder.com/50', commonInterest: 'Music' },
-  { name: 'User 2', image: 'https://via.placeholder.com/50', commonInterest: 'Sports' },
-  // Add more recommendations...
-];
-
-const Friend = ({ friend, onDeleteFriend }) => (
-  <div className="friend">
-    <img src={friend.image} alt={friend.name} />
-    <div className="name">{friend.name}</div>
-    <button onClick={() => onDeleteFriend(friend)}>Delete Friend</button>
-  </div>
-);
-
-// ...
-
-const Recommendation = ({ recommendation, onAddFriend }) => (
-  <div className="recommendation">
-    <img src={recommendation.image} alt={recommendation.name} />
-    <div className="name">{recommendation.name}</div>
-    <div className="common-interest">She also likes {recommendation.commonInterest}</div>
-    <button onClick={() => onAddFriend(recommendation)}>Add Friend</button>
-  </div>
-);
+import React, { useState, useEffect } from "react";
 
 const FriendPage = () => {
-  const [friendsList, setFriendsList] = useState([]);
+  const [friends, setFriends] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
 
   useEffect(() => {
-    // Mock fetching friends list and recommendations
-    setFriendsList(mockFriendsList);
-    setRecommendations(mockRecommendations);
+    // Fetch friends list
+    fetch("http://localhost:8080/friendslist/1/friends")
+      .then((response) => response.json())
+      .then((data) => setFriends(data))
+      .catch((error) => console.log(error));
+
+    // Fetch friend recommendations
+    fetch("http://localhost:8080/friendslist/1/recommendations")
+      .then((response) => response.json())
+      .then((data) => setRecommendations(data))
+      .catch((error) => console.log(error));
   }, []);
 
-  const handleAddFriend = (friend) => {
-    setFriendsList([...friendsList, friend]);
-    setRecommendations(recommendations.filter((r) => r !== friend));
+  const handleAddFriend = (friendId) => {
+    // Add friend to the user's friends list
+    fetch(`http://localhost:8080/api/users/1/friends`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ friendId }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Remove the added friend from recommendations
+        setRecommendations((prevRecommendations) =>
+          prevRecommendations.filter((r) => r.userId !== friendId)
+        );
+
+        // Add the friend to the friends list
+        setFriends((prevFriends) => [
+          ...prevFriends,
+          recommendations.find((r) => r.userId === friendId),
+        ]);
+      })
+      .catch((error) => console.log(error));
   };
 
+  const handleDeleteFriend = (friendId) => {
+    // Remove friend from the user's friends list
+    fetch(`http://localhost:8080/api/users/1/friends/${friendId}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Remove the deleted friend from friends list
+        setFriends((prevFriends) =>
+          prevFriends.filter((f) => f.userId !== friendId)
+        );
 
-  const handleDeleteFriend = (friend) => {
-    setFriendsList(friendsList.filter((f) => f !== friend));
-    setRecommendations([...recommendations, friend]);
+        // Add the friend back to recommendations
+        setRecommendations((prevRecommendations) => [
+          ...prevRecommendations,
+          friends.find((f) => f.userId === friendId),
+        ]);
+      })
+      .catch((error) => console.log(error));
   };
-
 
   return (
-    <div id="content">
-      <div id="recommendations">
-        {recommendations.map((recommendation, i) => (
-          <Recommendation
-            key={i}
-            recommendation={recommendation}
-            onAddFriend={handleAddFriend}
-          />
+    <div>
+      <h2>Friends</h2>
+      <ul>
+        {friends.map((friend) => (
+          <li key={friend.userId}>
+            {friend.username}
+            <button onClick={() => handleDeleteFriend(friend.userId)}>
+              Delete Friend
+            </button>
+          </li>
         ))}
-      </div>
-      <div id="friends-list">
-        {friendsList.map((friend, i) => (
-          <Friend
-            key={i}
-            friend={friend}
-            onDeleteFriend={handleDeleteFriend}
-          />
+      </ul>
+
+      <h2>Recommendations</h2>
+      <ul>
+        {recommendations.map((recommendation) => (
+          <li key={recommendation.userId}>
+            {recommendation.username}
+            <button onClick={() => handleAddFriend(recommendation.userId)}>
+              Add Friend
+            </button>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
 
-// ...
-
 export default FriendPage;
+
