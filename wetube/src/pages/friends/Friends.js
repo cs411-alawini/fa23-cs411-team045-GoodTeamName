@@ -1,19 +1,22 @@
-
 import React, { useState, useEffect } from "react";
 
 const FriendPage = () => {
   const [friends, setFriends] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
+  const storedUser = sessionStorage.getItem("currentUser");
+  const data = JSON.parse(storedUser);
+  const user = data.user;
+  console.log(user);
 
   useEffect(() => {
     // Fetch friends list
-    fetch("http://localhost:8080/friendslist/1/friends")
+    fetch(`http://localhost:8080/friendslist/${user.id}/friends`)
       .then((response) => response.json())
       .then((data) => setFriends(data))
       .catch((error) => console.log(error));
 
     // Fetch friend recommendations
-    fetch("http://localhost:8080/friendslist/1/recommendations")
+    fetch(`http://localhost:8080/friendslist/${user.id}/recommendations`)
       .then((response) => response.json())
       .then((data) => setRecommendations(data))
       .catch((error) => console.log(error));
@@ -21,7 +24,7 @@ const FriendPage = () => {
 
   const handleAddFriend = (friendId) => {
     // Add friend to the user's friends list
-    fetch(`http://localhost:8080/api/users/1/friends`, {
+    fetch(`http://localhost:8080/friendslist/${user.id}/friends`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +49,7 @@ const FriendPage = () => {
 
   const handleDeleteFriend = (friendId) => {
     // Remove friend from the user's friends list
-    fetch(`http://localhost:8080/api/users/1/friends/${friendId}`, {
+    fetch(`http://localhost:8080/friendslist/${user.id}/friends/${friendId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
