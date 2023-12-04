@@ -17,6 +17,10 @@
     margin: 10px 0;
 }
 
+.video-card.no-side-margin:hover {
+    transform: scale(1.03);
+}
+
 .video-details {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem; /* p-4 */
