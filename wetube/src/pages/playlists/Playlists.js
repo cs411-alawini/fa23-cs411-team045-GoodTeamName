@@ -7,27 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "./playlists.css";
 
-// const placeholderPlaylists = [
-//   {
-//     playlistName: "playlist1",
-//     video_counts: 3,
-//     category: "Cats",
-//     id: 1,
-//   },
-//   {
-//     playlistName: "playlist2",
-//     video_counts: 3,
-//     category: "Cats",
-//     id: 1,
-//   },
-//   {
-//     playlistName: "playlist2",
-//     video_counts: 3,
-//     category: "Cats",
-//     id: 1,
-//   },
-// ];
-
 const Playlists = () => {
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
@@ -37,9 +16,14 @@ const Playlists = () => {
   const [showForm, setShowForm] = useState(false);
   const [playlistName, setPlaylistName] = useState("");
 
+  const storedUser = sessionStorage.getItem("currentUser");
+  const data = JSON.parse(storedUser);
+  const user = data.user;
+  console.log(user);
+
   const fetchPlaylists = async () => {
     try {
-      const userID = 1;
+      const userID = user.id;
       const response = await fetch(
         `http://localhost:8080/playlist?userID=${userID}`,
         {
@@ -87,15 +71,6 @@ const Playlists = () => {
     return (
       <div>
         <h2>Playlists loading...</h2>
-      </div>
-    );
-  }
-
-  // TODO: replace with standardized failure page
-  if (failed) {
-    return (
-      <div>
-        <h2>Playlists not found :(</h2>
       </div>
     );
   }
@@ -149,7 +124,7 @@ const Playlists = () => {
         },
         body: JSON.stringify({
           playlistName: playlistName,
-          userID: 1, // Replace with the actual user ID
+          userID: user.id, // Replace with the actual user ID
         }),
       });
 
@@ -201,34 +176,46 @@ const Playlists = () => {
             </form>
           )}
 
-          <div className="contained-videos">
-            <div className="playlist-video-desc">
-              <p className="playlist-video-idv">Playlist Name</p>
-              <p className="playlist-video-idv">Number of Videos Contained </p>
-              <p className="playlist-video-idv">Majority of the Category</p>
-              <p className="playlist-video-idv">Delete</p>
+          {!playlist && (
+            <div>
+              <h2>No playlists found</h2>
             </div>
-            {playlist.map((playlist) => {
-              return (
-                <div className="playlist-video" key={playlist.playlistID}>
-                  <Link to={`../playlistinfo/${playlist.id}`}>
+          )}
+
+          {playlist && (
+            <div className="contained-videos">
+              <div className="playlist-video-desc">
+                <p className="playlist-video-idv">Playlist Name</p>
+                <p className="playlist-video-idv">
+                  Number of Videos Contained{" "}
+                </p>
+                <p className="playlist-video-idv">Majority of the Category</p>
+                <p className="playlist-video-idv">Delete</p>
+              </div>
+              {playlist.map((playlist) => {
+                return (
+                  <div className="playlist-video" key={playlist.playlistID}>
+                    <Link to={`../playlistinfo/${playlist.id}`}>
+                      <p className="playlist-video-idv">
+                        {playlist.playlistName}
+                      </p>
+                    </Link>
                     <p className="playlist-video-idv">
-                      {playlist.playlistName}
+                      {playlist.video_counts}{" "}
                     </p>
-                  </Link>
-                  <p className="playlist-video-idv">{playlist.video_counts} </p>
-                  <p className="playlist-video-idv">{playlist.category}</p>
-                  <button
-                    className="btn"
-                    onClick={() => handleDelete(playlist.playlistID)}
-                  >
-                    DELETE
-                  </button>
-                  <ToastContainer />
-                </div>
-              );
-            })}
-          </div>
+                    <p className="playlist-video-idv">{playlist.category}</p>
+                    <button
+                      className="btn"
+                      onClick={() => handleDelete(playlist.playlistID)}
+                    >
+                      DELETE
+                    </button>
+                    <ToastContainer />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>

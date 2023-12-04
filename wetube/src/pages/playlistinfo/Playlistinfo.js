@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useParams, Link } from 'react-router-dom';
 import "./playlistinfo.css";
+import pencil from "../../imgs/pencil.svg";
 
 export const getThumbnail = (videoId) => {
   return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
@@ -34,8 +35,11 @@ const Playlistinfo = () => {
   const [playListID, setPlayListID] = useState(id);
   const [videos, setVideos] = useState([]);
   const [title, setTitle] = useState("Playlist");
+  const [rename, setRename] = useState("");
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
+  const [editable, setEditable] = useState(false);
+  const [deleted, setDeleted] = useState(false);
 
   useEffect(() => {
     try {
@@ -49,6 +53,7 @@ const Playlistinfo = () => {
             setFailed(true);
           } else {
             setTitle(data[0].playlistName);
+            console.log("resetting...");
           }
         });
     } catch (err) {
@@ -57,7 +62,7 @@ const Playlistinfo = () => {
       setLoading(false);
       setFailed(true);
     }
-  }, [id, deletePlaylist]);
+  }, [id, setDeleted]);
 
   useEffect(() => {
     try {
@@ -99,11 +104,40 @@ const Playlistinfo = () => {
       fetch(`http://localhost:8080/playlist/${playListID}`, {
           method: "DELETE"
       }).then(() => {
+        setDeleted(true);
         return true;
       })
     } catch (err) {
       console.error(err);
       console.log("error");
+      return false;
+    }
+  }
+
+  const updateRename = async (event) => {
+    setRename(event.target.value);
+  }
+
+  async function submitRename() {
+    setEditable(false);
+    console.log(title);
+    try {
+      fetch(`http://localhost:8080/playlist/${playListID}`, {
+          method: "PUT",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({"playlistName": rename})
+      }).then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.status === "Error") {
+          alert(`Error: ${data.message}`);
+        } else {
+          setTitle(rename);
+        }
+      })
+    } catch (err) {
+      console.error(err);
+      if (err)
       return false;
     }
   }
@@ -143,7 +177,18 @@ const Playlistinfo = () => {
       <div className="playlist-header">
         <img className="playlist-pic" alt="playlist preview" src={getThumbnail(videos[0].videoID)}/>
         <div className="playlist-overview">
-          <h2 className="playlist-title">{title}</h2>
+        {editable ? 
+          <div id="playlist-title" className="playlist-title">
+              <input onChange={updateRename} className="editable-title" type="text" defaultValue={title}/>
+              <button onClick={() => submitRename()}><img src={pencil}/></button>
+          </div>
+          : 
+          <div id="playlist-title" className="playlist-title">
+              <h2>{title}</h2> 
+              <button onClick={() => setEditable(true)}><img src={pencil}/></button>
+          </div>
+            
+        }
           <button className="btn" onClick={() => {
             if(window.confirm('Are you sure you want to delte this playlist?')){deletePlaylist()};}
           }>DELETE</button>

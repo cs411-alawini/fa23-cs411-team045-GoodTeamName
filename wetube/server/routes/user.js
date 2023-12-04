@@ -89,4 +89,17 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// to-do: add a route to logout a user
+router.post("/logout", (req, res) => {
+  // Check if req.session is defined before setting properties
+  if (!req.session) {
+    return res.status(500).json({ error: "Session not available" });
+  }
+
+  // Remove user information from session storage
+  req.session.destroy();
+
+  res.json({ message: "Logout successful" });
+});
+
 module.exports = router;
