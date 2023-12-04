@@ -19,7 +19,8 @@
 CREATE TABLE Users (
 userID INT,
 userName VARCHAR(20),
-userPassword VARCHAR(20)
+userPassword VARCHAR(20).
+userRegion VARCHAR(20)
 PRIMARY KEY(userID)
 );
 
