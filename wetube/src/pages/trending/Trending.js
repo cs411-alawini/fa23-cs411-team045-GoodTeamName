@@ -1,9 +1,10 @@
 import React from "react";
 import "./trending.css"; // Importing the CSS file
-import Bar from "../../components/barchart/Barchart";
-import Pie from "../../components/piechart/Piechart";
+// import Bar from "../../components/barchart/Barchart";
+// import Pie from "../../components/piechart/Piechart";
 import Videoinfo from "../videoinfo/Videoinfo";
 import VideoButton from "../../components/videobutton/Videobutton";
+import Channelsbar from "../../components/channelbar/Channelbar";
 import { Route, Routes } from "react-router-dom";
 
 const Trending = () => {
@@ -22,8 +23,8 @@ const Trending = () => {
           </div>
         </div>
         <div className="right-section">
-          <Bar />
-          <Pie />
+          <Channelsbar />
+          <Channelsbar />
         </div>
       </div>
       <hr className="divider" />
@@ -33,8 +34,8 @@ const Trending = () => {
           <Route path="/app/videoinfo/:videoId" element={<Videoinfo />} />
         </Routes>
         <div className="video-grid">
-          <VideoButton videoId="-XFBVAAzXjc" />
-          <VideoButton videoId="--hjHKgm67g" />
+          <VideoButton videoId="uQ6hAKR33lU" />
+          <VideoButton videoId="4jlacaLPjRo" />
         </div>
       </div>
     </div>

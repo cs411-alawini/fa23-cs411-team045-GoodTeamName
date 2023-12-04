@@ -1,10 +1,12 @@
 import React from "react";
 import "./dashboard.css"; // Importing the CSS file
-import Bar from "../../components/barchart/Barchart";
-import Pie from "../../components/piechart/Piechart";
+// import Bar from "../../components/barchart/Barchart";
+// import Pie from "../../components/piechart/Piechart";
 import Playlistbutton from "../../components/playlistbutton/Playlistbutton";
 import { Route, Routes } from "react-router-dom";
 import Playlistinfo from "../playlistinfo/Playlistinfo";
+import Channelsbar from "../../components/channelbar/Channelbar";
+import VideoCategoryPieChart from "../../components/categorypie/Pie";
 
 const Dashboard = () => {
   return (
@@ -22,8 +24,8 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="right-section">
-          <Bar />
-          <Pie />
+          <Channelsbar />
+          <VideoCategoryPieChart />
         </div>
       </div>
       <hr className="divider" />
@@ -37,7 +39,7 @@ const Dashboard = () => {
         </Routes>
         <div className="video-grid">
           <Playlistbutton playlistId="19" />
-          <Playlistbutton playlistId="28" />
+          <Playlistbutton playlistId="33" />
         </div>
       </div>
     </div>
