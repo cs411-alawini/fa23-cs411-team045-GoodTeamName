@@ -1,6 +1,39 @@
+/* VideoCategoryPieChart.css */
 .pie-chart-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    width: 40%;
+    /* Full width of the parent container */
+    height: auto;
+    /* Height is auto to maintain aspect ratio */
+    padding: 20px;
+    /* Add some padding */
 }
+
+.recharts-pie-label-text {
+    fill: #333;
+    /* Color for the label text */
+    font-size: 0.85em;
+    /* Adjust label text size */
+}
+
+.recharts-tooltip-wrapper {
+    background-color: #fff;
+    /* Tooltip background */
+    border: 1px solid #ddd;
+    /* Tooltip border */
+    border-radius: 3px;
+    /* Rounded corners for the tooltip */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    /* Tooltip shadow */
+    padding: 5px;
+    /* Padding inside the tooltip */
+}
+
+.recharts-legend-wrapper {
+    bottom: 0;
+    /* Position the legend at the bottom */
+}
+
+/* You can add more specific styles targeting other Recharts elements if needed */

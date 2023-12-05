@@ -5,7 +5,7 @@ import "./dashboard.css"; // Importing the CSS file
 import Playlistbutton from "../../components/playlistbutton/Playlistbutton";
 import { Route, Routes } from "react-router-dom";
 import Playlistinfo from "../playlistinfo/Playlistinfo";
-import Channelsbar from "../../components/channelbar/Channelbar";
+import ChannelsBar from "../../components/channelbar/Channelbar";
 import VideoCategoryPieChart from "../../components/categorypie/Pie";
 
 const Dashboard = () => {
@@ -14,17 +14,17 @@ const Dashboard = () => {
       {/* Header Section */}
       <div className="header">
         <div className="left-section">
-          <div className="videos-counts">
+          <div className="info">
             <div className="label">Total videos</div>
             <div className="value">114514 videos</div>
           </div>
-          <div className="playlists-counts">
+          <div className="info">
             <div className="label">Total Playlists</div>
             <div className="value">23333 lists</div>
           </div>
         </div>
         <div className="right-section">
-          <Channelsbar />
+          <ChannelsBar />
           <VideoCategoryPieChart />
         </div>
       </div>

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const connection = require("../connection");
 
-router.get("/bar", (req, res) => {
+router.get("/", (req, res) => {
   let sql = `
     SELECT channel, SUM(videoView) AS totalViews
     FROM Video

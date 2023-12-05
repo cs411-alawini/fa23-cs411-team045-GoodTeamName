@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const connection = require("../connection");
 
-router.get("/pie", (req, res) => {
+router.get("/", (req, res) => {
   const sqlQuery = `
     SELECT videoCategory, SUM(videoView) AS totalViews
     FROM Video
@@ -16,18 +16,18 @@ router.get("/pie", (req, res) => {
       res.status(500).send("Error fetching data");
     } else {
       // Calculate the total views of the top 5 categories
-      const totalViews = results.reduce(
-        (acc, curr) => acc + curr.totalViews,
-        0
-      );
+      // const totalViews = results.reduce(
+      //   (acc, curr) => acc + curr.totalViews,
+      //   0
+      // );
 
-      // Normalize the data so that the sum equals 100%
-      const normalizedResults = results.map((category) => ({
-        ...category,
-        totalViews: (category.totalViews / totalViews) * 100,
-      }));
+      // // Normalize the data so that the sum equals 100%
+      // const normalizedResults = results.map((category) => ({
+      //   ...category,
+      //   totalViews: (category.totalViews / totalViews) * 100,
+      // }));
 
-      res.json(normalizedResults);
+      res.json(results);
     }
   });
 });
