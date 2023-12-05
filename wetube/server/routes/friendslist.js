@@ -85,7 +85,7 @@ router.get("/:userId/recommendations", (req, res) => {
       WHERE f3.userIDa = ?
     ) AND u.userId != ?
     LIMIT 3;
-  `;
+  `; 
 
     connection.query(sameRegionSql, [req.params.userId, req.params.userId, userRegion], function (err, sameRegionResult) {
       if (err) {

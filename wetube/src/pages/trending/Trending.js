@@ -33,22 +33,22 @@ const Trending = () => {
       .catch((error) => {
         console.error("Error fetching video count:", error);
       });
-    fetch(`http://localhost:8080/recommend/${user.id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setRecommendations(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching recommendations:", error);
-      });
+    // fetch(`http://localhost:8080/recommend/${user.id}`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setRecommendations(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error fetching recommendations:", error);
+    //   });
   }, [user.id]);
 
-  // Render the recommended videos
-  const renderRecommendedVideos = () => {
-    return recommendations.map((video, index) => (
-      <VideoButton key={index} videoId={video.videoID} /> // Assuming videoID is the correct property
-    ));
-  };
+  // // Render the recommended videos
+  // const renderRecommendedVideos = () => {
+  //   return recommendations.map((video, index) => (
+  //     <VideoButton key={index} videoId={video.videoID} /> // Assuming videoID is the correct property
+  //   ));
+  // };
 
   return (
     <div className="dashboard">
@@ -77,7 +77,7 @@ const Trending = () => {
         </Routes>
         <div className="video-grid">
           <VideoButton videoId="uQ6hAKR33lU" />
-          {renderRecommendedVideos()}
+          {/* {renderRecommendedVideos()} */}
         </div>
       </div>
     </div>
