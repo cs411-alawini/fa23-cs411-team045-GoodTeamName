@@ -250,7 +250,11 @@ const Playlistinfo = () => {
             </Link>
             <span>{video.channel}</span>
             <span>{video.videoView.toLocaleString("en-US")}</span>
-            <span><button className="btn" onClick={() => removeVideo(video.videoID)}>REMOVE</button></span>
+            {ownerID === user.id ?
+              <span><button className="btn" onClick={() => removeVideo(video.videoID)}>REMOVE</button></span>
+              :
+              <span/>
+            }
           </li>;
         })}
       </ul>
