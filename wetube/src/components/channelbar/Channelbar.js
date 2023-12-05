@@ -1,4 +1,3 @@
-// frontend/src/components/TopChannelsChart.js
 import React, { useState, useEffect } from "react";
 import {
   ResponsiveContainer,
@@ -13,9 +12,12 @@ import {
 
 const ChannelsBar = () => {
   const [data, setData] = useState([]);
+  const storedUser = sessionStorage.getItem("currentUser");
+  const Udata = JSON.parse(storedUser);
+  const user = Udata.user;
 
   useEffect(() => {
-    fetch("http://localhost:8080/bar")
+    fetch(`http://localhost:8080/bar/${user.id}/countRegionVideos`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -71,7 +73,7 @@ const ChannelsBar = () => {
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
-          dataKey="channel"
+          dataKey="channelTitle"
           angle={-30}
           textAnchor="end"
           height={100}

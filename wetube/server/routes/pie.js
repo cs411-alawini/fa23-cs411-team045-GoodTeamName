@@ -15,20 +15,9 @@ router.get("/", (req, res) => {
     if (err) {
       res.status(500).send("Error fetching data");
     } else {
-      // Calculate the total views of the top 5 categories
-      // const totalViews = results.reduce(
-      //   (acc, curr) => acc + curr.totalViews,
-      //   0
-      // );
-
-      // // Normalize the data so that the sum equals 100%
-      // const normalizedResults = results.map((category) => ({
-      //   ...category,
-      //   totalViews: (category.totalViews / totalViews) * 100,
-      // }));
-
       res.json(results);
     }
   });
 });
+
 module.exports = router;

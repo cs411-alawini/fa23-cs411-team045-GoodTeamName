@@ -44,6 +44,10 @@ const playlistbt = require("./routes/playlistbt");
 
 app.use("/playlistbt", playlistbt);
 
+const recommend = require("./routes/recommend");
+
+app.use("/recommend", recommend);
+
 app.listen(8080, () => {
   console.log(`Server is running on port 8080.`);
 });
