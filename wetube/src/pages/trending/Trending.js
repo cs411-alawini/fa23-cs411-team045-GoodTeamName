@@ -43,11 +43,15 @@ const Trending = () => {
       });
   }, [user.id]);
 
-  // Render the recommended videos
-  const renderRecommendedVideos = () => {
-    return recommendations.map((video, index) => (
-      <VideoButton key={index} videoId={video.videoID} /> // Assuming videoID is the correct property
-    ));
+  // Function to render the recommended video
+  const renderRecommendedVideo = () => {
+    if (recommendations.length > 0) {
+      // Assuming the first element is the recommended video
+      const recommendedVideo = recommendations[0];
+      return <VideoButton videoId={recommendedVideo.RecommendedVideoID} />;
+    } else {
+      return <div>No recommendations available at the moment.</div>;
+    }
   };
 
   return (
@@ -77,7 +81,7 @@ const Trending = () => {
         </Routes>
         <div className="video-grid">
           <VideoButton videoId="uQ6hAKR33lU" />
-          {renderRecommendedVideos()}
+          {renderRecommendedVideo()}
         </div>
       </div>
     </div>
