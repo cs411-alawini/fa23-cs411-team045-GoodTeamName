@@ -27,7 +27,7 @@ const VideoCategoryPieChart = () => {
     resizeObserver.observe(chartContainerRef.current);
 
     // Fetch the data from the backend using fetch API
-    fetch(`http://localhost:8080/pie/${user.id}/countRegionVideos`)
+    fetch(`http://localhost:8080/pie/${user.id}/countListCats`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok " + response.statusText);
@@ -59,6 +59,7 @@ const VideoCategoryPieChart = () => {
       resizeObserver.disconnect();
     };
   }, []);
+
 
   return (
     <div className="pie-chart-wrapper" ref={chartContainerRef}>

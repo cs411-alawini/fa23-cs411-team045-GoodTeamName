@@ -3,7 +3,7 @@ import "./dashboard.css"; // Importing the CSS file
 import { Route, Routes } from "react-router-dom";
 import Playlistinfo from "../playlistinfo/Playlistinfo";
 import ChannelsBar from "../../components/channelbar/Channelbar";
-import VideoCategoryPieChart from "../../components/categorypie/Pie";
+import VideoCategoryPieChart from "../../components/listpie/Pie";
 import UserPlaylists from "../../components/userplaylists/Userplaylists";
 
 const Dashboard = () => {
