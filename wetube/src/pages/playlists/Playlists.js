@@ -193,7 +193,7 @@ const Playlists = () => {
               {playlist.map((playlist) => {
                 return (
                   <div className="playlist-video" key={playlist.playlistID}>
-                    <Link to={`../playlistinfo/${playlist.id}`}>
+                    <Link to={`../playlistinfo/${playlist.playlistID}`}>
                       <p className="playlist-video-idv">
                         {playlist.playlistName}
                       </p>
