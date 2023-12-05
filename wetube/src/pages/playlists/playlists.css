@@ -1,70 +1,42 @@
 .playlist-container {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  align-items: start;
-  grid-gap: 60px;
+  width: 100%;
 }
 
-/* project summary */
-.playlist-detail {
-  padding: 30px;
-  border-radius: 4px;
-}
-
-.playlist-detail .playlist-title-container {
+.playlist-title-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.playlist-detail .playlist-title-container .playlist-title {
+.playlist-title-container .playlist-title {
+  width: 100%;
+  padding: 0;
   color: var(--text-color);
   margin-bottom: 10px;
   font-size: 20pt;
   font-weight: bold;
 }
 
-.playlist-detail h4 {
+.playlist-title-container .btn {
+  width: 30%;
+  min-width: 200px;
+  min-height: 50px;
+}
+
+.h4 {
   color: var(--text-color);
   margin-bottom: 10px;
 }
 
-.playlist-detail .contained-videos {
+.contained-videos {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
 
-.playlist-detail + .btn {
+.playlist-container.btn {
   margin-top: 20px;
-}
-
-.playlist-detail .playlist-video-desc {
-  display: flex;
-  flex-direction: row;
-  margin-right: 10px;
-}
-
-.playlist-detail .playlist-video-desc .playlist-video-idv {
-  margin-right: 100px;
-  white-space: nowrap;
-}
-
-.playlist-detail .playlist-video {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  margin-right: 10px;
-}
-
-.playlist-detail .playlist-video .playlist-video-idv {
-  padding-top: 10px;
-  margin-right: 220px;
-}
-
-.playlist-detail .contained-videos div:nth-of-type(even) {
-  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .created-btn {
@@ -89,4 +61,53 @@
   justify-content: space-between;
   align-items: center;
   color: black;
+}
+
+.contained-videos {
+  width: 100%;
+}
+
+.playlist-video {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: [thumbnail] 0.5fr [name] 1.5fr [num_videos] 1fr [top_category] 1fr [delete] 0.75fr;
+  min-height: 50px;
+  max-height: 5%;
+}
+
+.playlist-video .Toastify {
+  height: 0;
+  margin: 0;
+  width: 0;
+}
+
+.playlist-video:nth-child(odd) {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.playlist-video > * {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contained-videos .thumbnail {
+  min-width: 50px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.contained-videos .thumbnail:hover {
+  transition: transform 0.1s ease-in-out;
+  transform: scale(1.03);
+}
+
+.contained-videos .btn {
+  padding: 0;
+  height: 80%;
+  width: 80%;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
