@@ -104,6 +104,21 @@ import React, { useState, useEffect } from "react";
 import './friends.css';
 import logo from "../../imgs/logo.png";
 
+const COUNTRY_CODES = {
+  BR: "Brazil",
+  CA: "Canada",
+  DE: "Germany",
+  FR: "France",
+  GB: "United Kingdom",
+  IND: "India",
+  JP: "Japan",
+  KR: "Korea",
+  MX: "Mexico",
+  RU: "Russia",
+  US: "United States",
+};
+
+
 const Friend = ({ friend, onDeleteFriend }) => (
   <div className="friend">
     <div className="details">
@@ -114,34 +129,63 @@ const Friend = ({ friend, onDeleteFriend }) => (
   </div>
 );
 
+// const Recommendation = ({ recommendation, onAddFriend }) => (
+//   <div className="recommendation">
+//     <div className="details">
+//       <img src={logo} alt={recommendation.username} />
+//       <div className="name">{recommendation.username}</div>
+//       <div className="common-interest">She also likes Music</div>
+//     </div>
+//     <button onClick={() => onAddFriend(recommendation.userId)}>Add Friend</button>
+//   </div>
+// );
+
 const Recommendation = ({ recommendation, onAddFriend }) => (
   <div className="recommendation">
     <div className="details">
       <img src={logo} alt={recommendation.username} />
       <div className="name">{recommendation.username}</div>
-      <div className="common-interest">She also likes Music</div>
+      <div className="common-interest">
+        {recommendation.userRegion
+          ? `He's also from ${COUNTRY_CODES[recommendation.userRegion]}`
+          : `He is a friend of ${recommendation.friendOfName}`}
+      </div>
     </div>
     <button onClick={() => onAddFriend(recommendation.userId)}>Add Friend</button>
   </div>
 );
 
-
 const FriendPage = () => {
   const [friends, setFriends] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
+
   const storedUser = sessionStorage.getItem("currentUser");
   const data = JSON.parse(storedUser);
   const user = data.user;
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:8080/friendslist/${user.id}/friends`)
+  //     .then((response) => response.json())
+  //     .then((data) => setFriends(data))
+  //     .catch((error) => console.log(error));
+
+  //   fetch(`http://localhost:8080/friendslist/${user.id}/recommendations`)
+  //     .then((response) => response.json())
+  //     .then((data) => setRecommendations(data))
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   useEffect(() => {
     fetch(`http://localhost:8080/friendslist/${user.id}/friends`)
       .then((response) => response.json())
       .then((data) => setFriends(data))
       .catch((error) => console.log(error));
-
+  
     fetch(`http://localhost:8080/friendslist/${user.id}/recommendations`)
       .then((response) => response.json())
-      .then((data) => setRecommendations(data))
+      .then((data) => {
+        setRecommendations([...data.sameRegion, ...data.friendOfFriend]);
+      })
       .catch((error) => console.log(error));
   }, []);
 
