@@ -34,7 +34,7 @@ const Login = () => {
         console.log(user);
         sessionStorage.setItem("currentUser", JSON.stringify(user));
         // Redirect to the home page
-        navigate("/app");
+        navigate("/");
       } else {
         const errorData = await response.json();
         setError(errorData.error || "Failed to sign up");

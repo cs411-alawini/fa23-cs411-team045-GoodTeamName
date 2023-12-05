@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -8,7 +8,6 @@ import { ToastContainer } from "react-toastify";
 import "./playlists.css";
 
 const Playlists = () => {
-  const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
@@ -21,7 +20,7 @@ const Playlists = () => {
   const user = data.user;
   console.log(user);
 
-  const fetchPlaylists = async () => {
+  const fetchPlaylists = useCallback(async () => {
     try {
       const userID = user.id;
       const response = await fetch(
@@ -45,11 +44,11 @@ const Playlists = () => {
       setLoading(false);
       setFailed(true);
     }
-  };
+  }, [user.id]);
 
   useEffect(() => {
     fetchPlaylists();
-  }, [id]);
+  }, [fetchPlaylists]);
 
   useEffect(() => {
     if (toDelete !== "") {
@@ -64,7 +63,7 @@ const Playlists = () => {
 
   useEffect(() => {
     fetchPlaylists();
-  }, [playlist]);
+  }, [playlist, fetchPlaylists]);
 
   // TODO: Replace with standardized loading graphic
   if (loading) {

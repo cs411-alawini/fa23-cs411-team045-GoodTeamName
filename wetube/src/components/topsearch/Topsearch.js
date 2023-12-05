@@ -20,9 +20,9 @@ const Topsearch = () => {
       <div className="icons">
         <div className="search-section">
           <form action="" className="search-bar">
-            <button type="submit" className="search-button">
+            <span className="search-button">
               <img src={search} alt="Search" className="icon" />
-            </button>
+            </span>
             <input
               type="text"
               placeholder="Search channel"
