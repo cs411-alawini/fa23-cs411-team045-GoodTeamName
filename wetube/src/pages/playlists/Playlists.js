@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState, useCallback } from "react";
-import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
