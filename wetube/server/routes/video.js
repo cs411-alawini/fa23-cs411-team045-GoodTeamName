@@ -18,7 +18,7 @@ router.get("/:id", (req, res) => {
 
 // to-do: search for videos using the search term(video title)
 router.get("/search/:term", (req, res) => {
-  let sql = `SELECT * FROM Video WHERE title LIKE "%${req.params.term}% LIMIT 30";`;
+  let sql = `SELECT * FROM Video WHERE videoTitle LIKE "%${req.params.term}%"  ORDER BY videoLikes, videoView ASC LIMIT 20;`;
 
   connection.query(sql, function (err, result) {
     if (err) {
@@ -26,6 +26,7 @@ router.get("/search/:term", (req, res) => {
       return;
     }
     res.json(result);
+    console.log(result);
   });
 });
 

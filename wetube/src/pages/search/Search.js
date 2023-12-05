@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getThumbnail } from "../../pages/playlistinfo/Playlistinfo";
+import { Link } from "react-router-dom";
 import "./search.css";
 
 const Search = () => {
@@ -28,13 +30,48 @@ const Search = () => {
     fetchSearchResults();
   }, [searchTerm]);
 
+  console.log(searchResults);
+  console.log(Array.isArray(searchResults));
+
   return (
     <div>
-      <h2>Search Results for: {searchTerm}</h2>
-      <ul>
-        {/* {searchResults.map((result) => (
-          <li key={result.videoID}>{result.title}</li>
-        ))} */}
+      <h2 className="search-intro">Search Results for: {searchTerm}</h2>
+      {searchTerm && searchResults.length === 0 && <h3>No results found</h3>}
+
+      <ul className="playlist-formatted">
+        <li key="column-names" className="playlist-row">
+          <span />
+          <span>
+            <b>Title</b>
+          </span>
+          <span>
+            <b>Channel</b>
+          </span>
+          <span>
+            <b>Views</b>
+          </span>
+          <span />
+        </li>
+        {Array.isArray(searchResults)
+          ? searchResults.map((video) => {
+              return (
+                <li key={video.videoID} className="playlist-row">
+                  <Link to={`../videoinfo/${video.videoID}`}>
+                    <img
+                      src={getThumbnail(video.videoID)}
+                      alt="video thumbnail"
+                      className="thumbnail"
+                    />
+                  </Link>
+                  <Link to={`../videoinfo/${video.videoID}`}>
+                    <span className="title">{video.videoTitle}</span>
+                  </Link>
+                  <span>{video.channel}</span>
+                  <span>{video.videoView.toLocaleString("en-US")}</span>
+                </li>
+              );
+            })
+          : null}
       </ul>
     </div>
   );
