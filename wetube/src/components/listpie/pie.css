@@ -10,13 +10,13 @@
     padding: 20px;
     /* Add some padding */
 }
-
 .recharts-pie-label-text {
-    fill: #99999900;
-    /* Color for the label text */
-    font-size: 0.85em;
-    /* Adjust label text size */
+    fill: #999999;
+    font-size: 12px;
+    text-anchor: middle;
+    transform: translate(0, 4px);
 }
+
 
 .recharts-tooltip-wrapper {
     background-color: #fff;
@@ -31,9 +31,10 @@
     /* Padding inside the tooltip */
 }
 
-.recharts-legend-wrapper {
-    bottom: 0;
-    /* Position the legend at the bottom */
+.recharts-legend-item-text {
+    font-size: 12px;
+    text-anchor: start;
+    transform: translateX(10px);
 }
 
 /* You can add more specific styles targeting other Recharts elements if needed */
