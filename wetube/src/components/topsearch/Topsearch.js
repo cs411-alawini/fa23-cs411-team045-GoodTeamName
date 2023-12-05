@@ -17,7 +17,6 @@ const Topsearch = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(searchTerm);
 
     navigate(`search/${searchTerm}`);
   };
@@ -48,7 +47,6 @@ const Topsearch = () => {
         <div className="user">
           {user && (
             <>
-              <img src={logo} alt="" className="icon" />
               <span>{user.username}</span>
             </>
           )}

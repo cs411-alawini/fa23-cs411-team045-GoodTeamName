@@ -6,9 +6,8 @@ import "./search.css";
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
-  const { searchTerm } = useParams();
 
-  console.log(searchTerm);
+  const { searchTerm } = useParams();
 
   useEffect(() => {
     const fetchSearchResults = async () => {
@@ -29,9 +28,6 @@ const Search = () => {
 
     fetchSearchResults();
   }, [searchTerm]);
-
-  console.log(searchResults);
-  console.log(Array.isArray(searchResults));
 
   return (
     <div>

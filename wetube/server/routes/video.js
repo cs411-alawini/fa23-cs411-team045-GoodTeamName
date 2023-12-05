@@ -26,7 +26,6 @@ router.get("/search/:term", (req, res) => {
       return;
     }
     res.json(result);
-    console.log(result);
   });
 });
 

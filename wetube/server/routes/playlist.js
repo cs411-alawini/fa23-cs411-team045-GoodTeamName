@@ -3,7 +3,7 @@ const connection = require("../connection");
 
 const router = express.Router();
 
-// to-do: add a route to get all playlists
+// Get all playlists
 router.get("/", (req, res) => {
   // console.log(req.query);
   let sql = `SELECT * FROM UserPlaylist WHERE userID="${req.query.userID}";`;
@@ -46,7 +46,7 @@ router.get("/:id/v", (req, res) => {
   });
 });
 
-// to-do: add a route to remove a playlist from the database
+// Remove a playlist from the database
 router.delete("/:id", (req, res) => {
   let sql = `DELETE FROM UserPlaylist WHERE playlistID="${req.params.id}";`;
 
@@ -61,7 +61,7 @@ router.delete("/:id", (req, res) => {
 
 // down below are routes need "req.body" to get data from front-end
 
-// to-do: add a route to post a playlist to the database
+// Create a playlist to the database
 router.post("/", (req, res) => {
   let sql = `INSERT INTO UserPlaylist (playlistName, userID) VALUES ("${req.body.playlistName}", "${req.body.userID}");`;
 
@@ -79,11 +79,14 @@ function isAlphaNumeric(str) {
   var code, i, len;
   for (i = 0, len = str.length; i < len; i++) {
     code = str.charCodeAt(i);
-    if (!(code == 32) && // space (' ')
-        !(code == 39) && // apostrophe
-        !(code > 47 && code < 58) && // numeric (0-9)
-        !(code > 64 && code < 91) && // upper alpha (A-Z)
-        !(code > 96 && code < 123)) { // lower alpha (a-z)
+    if (
+      !(code == 32) && // space (' ')
+      !(code == 39) && // apostrophe
+      !(code > 47 && code < 58) && // numeric (0-9)
+      !(code > 64 && code < 91) && // upper alpha (A-Z)
+      !(code > 96 && code < 123)
+    ) {
+      // lower alpha (a-z)
       return false;
     }
   }
@@ -96,9 +99,14 @@ router.put("/:id", (req, res) => {
     `Updating plalist ${req.params.id} with name "${req.body.playlistName}"`
   );
   if (!req.body.playlistName) {
-    res.status(400).json({status: "Error", message: "No playlist name provided"});
+    res
+      .status(400)
+      .json({ status: "Error", message: "No playlist name provided" });
   } else if (req.body.playlistName.length > 30) {
-    res.status(400).json({status: "Error", message: "Playlist name must be 30 characters or less"})
+    res.status(400).json({
+      status: "Error",
+      message: "Playlist name must be 30 characters or less",
+    });
   } else if (req.body.playlistName.length === 0) {
     res
       .status(400)
