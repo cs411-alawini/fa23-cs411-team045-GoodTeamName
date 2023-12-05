@@ -12,7 +12,7 @@
 }
 
 .recharts-pie-label-text {
-    fill: #333;
+    fill: #99999900;
     /* Color for the label text */
     font-size: 0.85em;
     /* Adjust label text size */

@@ -9,7 +9,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Text,
 } from "recharts";
 
 const ChannelsBar = () => {
@@ -68,7 +67,7 @@ const ChannelsBar = () => {
   };
 
   return (
-    <ResponsiveContainer width="60%" height={250}>
+    <ResponsiveContainer width="60%" height="100%">
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis

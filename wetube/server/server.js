@@ -40,6 +40,10 @@ const categoryPie = require("./routes/pie");
 
 app.use("/pie", categoryPie);
 
+const playlistbt = require("./routes/playlistbt");
+
+app.use("/playlistbt", playlistbt);
+
 app.listen(8080, () => {
   console.log(`Server is running on port 8080.`);
 });

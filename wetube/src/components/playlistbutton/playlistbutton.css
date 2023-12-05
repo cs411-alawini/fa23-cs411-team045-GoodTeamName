@@ -11,6 +11,7 @@
     text-decoration: none;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
+    max-width: 600px;
 }
 
 .playlist-button:hover {
