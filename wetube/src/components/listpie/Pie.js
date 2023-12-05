@@ -35,16 +35,16 @@ const VideoCategoryPieChart = () => {
         return response.json();
       })
       .then((data) => {
-        const totalVideos = data.reduce(
-          (sum, item) => sum + parseInt(item.totalVideos, 10),
+        const numVideos = data.reduce(
+          (sum, item) => sum + parseInt(item.numVideos, 10),
           0
         );
         // Transform data to include category names and percentages
         const transformedData = data.map((item) => ({
           name: getCategoryName(parseInt(item.videoCategory, 10)),
-          value: parseInt(item.totalVideos, 10),
+          value: parseInt(item.numVideos, 10),
           percentage: (
-            (parseInt(item.totalVideos, 10) / totalVideos) *
+            (parseInt(item.numVideos, 10) / numVideos) *
             100
           ).toFixed(0),
         }));

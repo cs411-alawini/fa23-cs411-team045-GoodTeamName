@@ -59,40 +59,31 @@ router.get("/:id/countRegionVideos", (req, res) => {
 
 
 router.get("/:id/countListCats", (req, res) => {
-  // Step 1: Get the user's region
-  let userId = req.params.id;
-  let getRegionSql = `SELECT userRegion FROM Users WHERE userID = ?;`;
+  const userId = req.params.id;
 
-  connection.query(getRegionSql, [userId], function (err, regionResult) {
-    if (err) {
-      res.status(500).send(err);
-      return;
-    }
-
-    if (regionResult.length === 0) {
-      res.status(404).send("User not found");
-      return;
-    }
-
-    // Step 2: Construct the dynamic SQL query
-    let region = regionResult[0].userRegion;
-    let countVideosSql = `
-    SELECT v.videoCategory, COUNT(*) AS totalVideos
-    FROM ?? r JOIN Video v
-    ON r.video_id = v.videoID
+  // MySQL query to retrieve the top 5 categories with the most videos
+  const query = `
+    SELECT v.videoCategory, COUNT(*) AS numVideos
+    FROM UserPlaylist up
+    JOIN Contain c ON up.playlistID = c.playListID
+    JOIN Video v ON c.videoID = v.videoID
+    WHERE up.userID = ?
     GROUP BY v.videoCategory
-    ORDER BY totalVideos DESC
-    LIMIT 5;`;
+    ORDER BY numVideos DESC
+    LIMIT 5;
+  `;
 
-    // Step 3: Execute the query
-    connection.query(countVideosSql, [region], function (err, countResult) {
-      if (err) {
-        res.status(500).send(err);
-        return;
-      }
-      res.json(countResult);
-    });
+  // Execute the query with the user ID as a parameter
+  connection.query(query, [userId], (error, results) => {
+    if (error) {
+      console.error("Error executing query:", error);
+      res.status(500).json({ error: "An error occurred" });
+    } else {
+      res.json(results);
+    }
   });
 });
+
+module.exports = router;
 
 module.exports = router;
