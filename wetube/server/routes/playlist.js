@@ -74,18 +74,16 @@ router.post("/", (req, res) => {
   });
 });
 
+// Also includes spaces (' ') and apostrophes
 function isAlphaNumeric(str) {
   var code, i, len;
-
   for (i = 0, len = str.length; i < len; i++) {
     code = str.charCodeAt(i);
-    if (
-      !(code == 32) && // space (' ')
-      !(code > 47 && code < 58) && // numeric (0-9)
-      !(code > 64 && code < 91) && // upper alpha (A-Z)
-      !(code > 96 && code < 123)
-    ) {
-      // lower alpha (a-z)
+    if (!(code == 32) && // space (' ')
+        !(code == 39) && // apostrophe
+        !(code > 47 && code < 58) && // numeric (0-9)
+        !(code > 64 && code < 91) && // upper alpha (A-Z)
+        !(code > 96 && code < 123)) { // lower alpha (a-z)
       return false;
     }
   }
@@ -98,9 +96,9 @@ router.put("/:id", (req, res) => {
     `Updating plalist ${req.params.id} with name "${req.body.playlistName}"`
   );
   if (!req.body.playlistName) {
-    res
-      .status(400)
-      .json({ status: "Error", message: "No playlist name provided" });
+    res.status(400).json({status: "Error", message: "No playlist name provided"});
+  } else if (req.body.playlistName.length > 30) {
+    res.status(400).json({status: "Error", message: "Playlist name must be 30 characters or less"})
   } else if (req.body.playlistName.length === 0) {
     res
       .status(400)
@@ -115,8 +113,6 @@ router.put("/:id", (req, res) => {
     SET playlistName = "${req.body.playlistName}"
     WHERE playlistID = ${req.params.id}`;
 
-    console.log(sql);
-
     connection.query(sql, function (err, result) {
       if (err) {
         res.send(err);
@@ -129,8 +125,9 @@ router.put("/:id", (req, res) => {
 
 // to-do: add a route to add a video to a playlist
 router.post("/:id", (req, res) => {
+  console.log(req.body);
   let sql = `INSERT INTO Contain (playlistID, videoID) VALUES ("${req.params.id}", "${req.body.videoID}");`;
-
+  console.log(`Adding ("${req.params.id}", "${req.body.videoID}") to Contain`);
   connection.query(sql, function (err, result) {
     if (err) {
       res.send(err);

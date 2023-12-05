@@ -7,22 +7,27 @@
 }
 
 .playlist-title {
-    font-size: 24pt;
-    font-weight: bold;
     text-align: center;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+
+.playlist-title h2 {
+    font-size: 24pt;
+    font-weight: bold;
 }
 
 .playlist-title img {
     height: 24px;
+    /* width: 10%; */
     margin: 10px;
 }
 
 .editable-title {
     color: black;
+    font-size: 18pt;
     padding: 0;
     width: 80%;
 }

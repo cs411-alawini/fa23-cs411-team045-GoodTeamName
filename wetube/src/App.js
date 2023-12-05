@@ -12,6 +12,7 @@ import Friends from "./pages/friends/Friends";
 import Playlists from "./pages/playlists/Playlists";
 import Videoinfo from "./pages/videoinfo/Videoinfo";
 import Playlistinfo from "./pages/playlistinfo/Playlistinfo";
+import Search from "./pages/search/Search";
 
 function App() {
   const Layout = () => {
@@ -42,6 +43,7 @@ function App() {
           <Route path="playlists" element={<Playlists />} />
           <Route path="videoinfo/:id" element={<Videoinfo />} />
           <Route path="playlistinfo/:id" element={<Playlistinfo />} />
+          <Route path="search/:searchTerm" element={<Search />} />
         </Route>{" "}
       </Routes>
     </div>
