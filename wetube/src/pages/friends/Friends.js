@@ -61,18 +61,6 @@ const FriendPage = () => {
   const data = JSON.parse(storedUser);
   const user = data.user;
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:8080/friendslist/${user.id}/friends`)
-  //     .then((response) => response.json())
-  //     .then((data) => setFriends(data))
-  //     .catch((error) => console.log(error));
-
-  //   fetch(`http://localhost:8080/friendslist/${user.id}/recommendations`)
-  //     .then((response) => response.json())
-  //     .then((data) => setRecommendations(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
-
   useEffect(() => {
     fetch(`http://localhost:8080/friendslist/${user.id}/friends`)
       .then((response) => response.json())

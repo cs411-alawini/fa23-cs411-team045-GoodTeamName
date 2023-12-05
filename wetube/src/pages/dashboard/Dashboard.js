@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./dashboard.css"; // Importing the CSS file
 import { Route, Routes } from "react-router-dom";
 import Playlistinfo from "../playlistinfo/Playlistinfo";
-import ChannelsBar from "../../components/channelbar/Channelbar";
+import Videobar from "../../components/videobar/Videobar";
 import VideoCategoryPieChart from "../../components/listpie/Pie";
 import UserPlaylists from "../../components/userplaylists/Userplaylists";
 
@@ -64,7 +64,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="right-section">
-          <ChannelsBar />
+          <Videobar />
           <VideoCategoryPieChart />
         </div>
       </div>
