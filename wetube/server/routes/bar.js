@@ -56,4 +56,32 @@ router.get("/:id/countRegionVideos", (req, res) => {
   });
 });
 
+
+
+router.get("/:id/countVideos", (req, res) => {
+  const userId = req.params.id;
+
+  // MySQL query to retrieve the top 5 categories with the most videos
+  const query = `
+    SELECT v.videoCategory, COUNT(*) AS totalVideos
+    FROM UserPlaylist up
+    JOIN Contain c ON up.playlistID = c.playListID
+    JOIN Video v ON c.videoID = v.videoID
+    WHERE up.userID = ?
+    GROUP BY v.videoCategory
+    ORDER BY totalVideos DESC
+    LIMIT 5;
+  `;
+
+  // Execute the query with the user ID as a parameter
+  connection.query(query, [userId], (error, results) => {
+    if (error) {
+      console.error("Error executing query:", error);
+      res.status(500).json({ error: "An error occurred" });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 module.exports = router;
