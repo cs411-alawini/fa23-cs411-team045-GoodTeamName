@@ -33,6 +33,8 @@ export const placeholderPlaylist = [
 const Playlistinfo = () => {
   const { id } = useParams();
   const [playListID, setPlayListID] = useState(id);
+  const [ownerID, setOwnerID] = useState(-1);
+  const [ownerName, setOwnerName] = useState("unknown");
   const [videos, setVideos] = useState([]);
   const [title, setTitle] = useState("Playlist");
   const [rename, setRename] = useState("");
@@ -40,6 +42,9 @@ const Playlistinfo = () => {
   const [failed, setFailed] = useState(false);
   const [editable, setEditable] = useState(false);
   const [deleted, setDeleted] = useState(false);
+  const storedUser = sessionStorage.getItem("currentUser");
+  const data = JSON.parse(storedUser);
+  const user = data.user;
 
   useEffect(() => {
     try {
@@ -53,6 +58,7 @@ const Playlistinfo = () => {
             setFailed(true);
           } else {
             setTitle(data[0].playlistName);
+            setOwnerID(data[0].userID);
             console.log("resetting...");
           }
         });
@@ -63,6 +69,28 @@ const Playlistinfo = () => {
       setFailed(true);
     }
   }, [id, setDeleted]);
+
+  useEffect(() => {
+    if (ownerID !== -1 && user.id != ownerID) {
+      try {
+        console.log("fetching owner name");
+        fetch(`http://localhost:8080/user/${ownerID}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.length === 0) {
+              setOwnerName("Unknown :/");
+            } else {
+              setOwnerName(data[0].userName);
+            }
+          });
+      } catch (err) {
+        console.log("error");
+        console.error(err);
+        setLoading(false);
+        setFailed(true);
+      }
+    }
+  }, [ownerID])
 
   useEffect(() => {
     try {
@@ -120,7 +148,6 @@ const Playlistinfo = () => {
 
   async function submitRename() {
     setEditable(false);
-    console.log(title);
     try {
       fetch(`http://localhost:8080/playlist/${playListID}`, {
           method: "PUT",
@@ -176,23 +203,34 @@ const Playlistinfo = () => {
     <div>
       <div className="playlist-header">
         <img className="playlist-pic" alt="playlist preview" src={getThumbnail(videos[0].videoID)}/>
-        <div className="playlist-overview">
-        {editable ? 
-          <div id="playlist-title" className="playlist-title">
-              <input onChange={updateRename} className="editable-title" type="text" defaultValue={title}/>
-              <button onClick={() => submitRename()}><img src={pencil}/></button>
+        {ownerID == user.id ? 
+          (editable ? 
+            <div className="playlist-overview">
+              <form onSubmit={() => submitRename()}className="playlist-title">
+                <input onChange={updateRename}  className="editable-title" type="text" defaultValue={title}/>
+                <button type="submit" onClick={() => submitRename()}><img src={pencil}/></button>
+              </form>
+            </div>
+              :
+            <div className="playlist-overview">
+              <div className="playlist-title">
+                  <h2>{title}</h2> 
+                  <button onClick={() => setEditable(true)}><img src={pencil}/></button>
+              </div>
+              <button className="btn" onClick={() => {
+                if(window.confirm('Are you sure you want to delte this playlist?')){deletePlaylist()};}
+              }>DELETE</button>
+            </div>
+          ) : 
+          <div className="playlist-overview">
+            <div>
+              <div className="playlist-title">
+                  <h2>{title}</h2>
+              </div>
+                <span>Owner: {ownerName}</span> 
+            </div>
           </div>
-          : 
-          <div id="playlist-title" className="playlist-title">
-              <h2>{title}</h2> 
-              <button onClick={() => setEditable(true)}><img src={pencil}/></button>
-          </div>
-            
         }
-          <button className="btn" onClick={() => {
-            if(window.confirm('Are you sure you want to delte this playlist?')){deletePlaylist()};}
-          }>DELETE</button>
-        </div>
       </div>
       <ul className="playlist-formatted">
         <li key="column-names" className="playlist-row">
