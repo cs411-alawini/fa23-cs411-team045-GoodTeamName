@@ -82,7 +82,7 @@ const Login = () => {
             <option value="IND">India</option>
             <option value="JP">Japan</option>
             <option value="KR">Korea</option>
-            <option value="MX">Maxico</option>
+            <option value="MX">Mexico</option>
             <option value="RU">Russia</option>
             <option value="US">United States</option>
           </select>

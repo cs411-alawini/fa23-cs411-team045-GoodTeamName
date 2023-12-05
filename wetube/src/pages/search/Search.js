@@ -3,11 +3,18 @@ import { useParams } from "react-router-dom";
 import { getThumbnail } from "../../pages/playlistinfo/Playlistinfo";
 import { Link } from "react-router-dom";
 import "./search.css";
+import PlaylistModal from "../../components/playlistmodal/Playlistmodal";
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const [modalID, setModalID] = useState("");
+  const [addingTo, setAddingTo] = useState(false);
 
   const { searchTerm } = useParams();
+
+  const storedUser = sessionStorage.getItem("currentUser");
+  const data = JSON.parse(storedUser);
+  const user = data.user;
 
   useEffect(() => {
     const fetchSearchResults = async () => {
@@ -28,6 +35,15 @@ const Search = () => {
 
     fetchSearchResults();
   }, [searchTerm]);
+
+  function openModal(event) {
+    setModalID(event.target.value); // Video id corresponding to button
+    setAddingTo(true);
+  }
+
+  function closeModal() {
+    setAddingTo(false);
+  }
 
   return (
     <div>
@@ -64,11 +80,13 @@ const Search = () => {
                   </Link>
                   <span>{video.channel}</span>
                   <span>{video.videoView.toLocaleString("en-US")}</span>
+                  <span><button className="btn" value={video.videoID} onClick={(e) => {openModal(e)}}>+ Add to playlist</button></span>
                 </li>
               );
             })
           : null}
       </ul>
+      {addingTo ? <PlaylistModal videoID={modalID} user={user} toClose={closeModal} /> : null}
     </div>
   );
 };

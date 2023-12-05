@@ -237,7 +237,7 @@ const Playlists = () => {
                   <span>
                     <button
                       className="btn"
-                      onClick={() => handleDelete(playlist.playlistID)}
+                      onClick={() => {if(window.confirm('Are you sure you want to delte this playlist?'))handleDelete(playlist.playlistID)}}
                     >
                       DELETE
                     </button>
