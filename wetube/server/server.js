@@ -32,6 +32,14 @@ const friendslist = require("./routes/friendslist");
 
 app.use("/friendslist", friendslist);
 
+const channelBar = require("./routes/bar");
+
+app.use("/bar", channelBar);
+
+const categoryPie = require("./routes/pie");
+
+app.use("/pie", categoryPie);
+
 app.listen(8080, () => {
   console.log(`Server is running on port 8080.`);
 });
