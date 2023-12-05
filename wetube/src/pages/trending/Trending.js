@@ -33,14 +33,14 @@ const Trending = () => {
       .catch((error) => {
         console.error("Error fetching video count:", error);
       });
-    // fetch(`http://localhost:8080/recommend/${user.id}`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setRecommendations(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error fetching recommendations:", error);
-    //   });
+    fetch(`http://localhost:8080/recommend/${user.id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setRecommendations(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching recommendations:", error);
+      });
   }, [user.id]);
 
   // Function to render the recommended video
