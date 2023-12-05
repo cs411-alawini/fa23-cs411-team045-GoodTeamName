@@ -32,9 +32,9 @@ const Search = () => {
     <div>
       <h2>Search Results for: {searchTerm}</h2>
       <ul>
-        {searchResults.map((result) => (
+        {/* {searchResults.map((result) => (
           <li key={result.videoID}>{result.title}</li>
-        ))}
+        ))} */}
       </ul>
     </div>
   );
