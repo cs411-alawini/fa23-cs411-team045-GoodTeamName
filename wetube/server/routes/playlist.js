@@ -19,8 +19,37 @@ router.get("/", (req, res) => {
   });
 });
 
+// Get specific playlist
 router.get("/:id", (req, res) => {
   let sql = `SELECT * FROM UserPlaylist WHERE playlistID="${req.params.id}";`;
+
+  connection.query(sql, function (err, result) {
+    if (err) {
+      res.send(err);
+      return;
+    }
+    res.json(result);
+  });
+});
+
+// Get playlist stats (ID of first video, num videos, top category)
+router.get("/:id/stats", (req, res) => {
+  let sql = `SELECT COUNT(*) as numVideos, 
+  (SELECT videoID
+    FROM Contain
+    WHERE playListID = ${req.params.id}
+    LIMIT 1) as firstID, 
+  (SELECT g.videoCategory
+     FROM (
+           SELECT v.videoCategory, COUNT(*) as numVideos
+           FROM Contain c NATURAL JOIN Video v
+           WHERE c.playlistID = ${req.params.id}
+           GROUP BY v.videoCategory
+           ORDER BY numVideos DESC
+          ) AS g
+     LIMIT 1) as topCategory
+  FROM Contain
+  WHERE playListID = ${req.params.id};`
 
   connection.query(sql, function (err, result) {
     if (err) {
