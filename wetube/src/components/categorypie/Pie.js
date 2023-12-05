@@ -42,7 +42,7 @@ const VideoCategoryPieChart = () => {
           percentage: (
             (parseInt(item.totalViews, 10) / totalViews) *
             100
-          ).toFixed(2),
+          ).toFixed(0),
         }));
         setData(transformedData);
       })
@@ -74,9 +74,7 @@ const VideoCategoryPieChart = () => {
           ))}
         </Pie>
         <Tooltip
-          formatter={(value, name, props) =>
-            `${props.payload.name}: ${props.payload.percentage}%`
-          }
+          formatter={(value, name, props) => ` ${props.payload.percentage}%`}
         />
         <Legend />
       </PieChart>

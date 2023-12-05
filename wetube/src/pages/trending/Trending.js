@@ -1,14 +1,38 @@
-import React from "react";
-import "../dashboard/dashboard.css"; // Importing the CSS file
-// import Bar from "../../components/barchart/Barchart";
-// import Pie from "../../components/piechart/Piechart";
+import React, { useState, useEffect } from "react";
+import "../dashboard/dashboard.css";
 import Videoinfo from "../videoinfo/Videoinfo";
 import VideoButton from "../../components/videobutton/Videobutton";
 import Channelsbar from "../../components/channelbar/Channelbar";
 import VideoCategoryPieChart from "../../components/categorypie/Pie";
 import { Route, Routes } from "react-router-dom";
 
+// Stateless functional component to display the current date
+const DateDisplay = () => {
+  // Function to get the current date
+  const getCurrentDate = () => {
+    const today = new Date();
+    return today.toDateString(); // Format it to a more readable form
+  };
+
+  return <div className="value">{getCurrentDate()}</div>;
+};
+
 const Trending = () => {
+  const storedUser = sessionStorage.getItem("currentUser");
+  const data = JSON.parse(storedUser);
+  const user = data.user;
+  const [videoCount, setVideoCount] = useState(0);
+  useEffect(() => {
+    fetch(`http://localhost:8080/playlistbt/${user.id}/countRegionVideos`)
+      .then((response) => response.json())
+      .then((data) => {
+        setVideoCount(data.videoCount);
+      })
+      .catch((error) => {
+        console.error("Error fetching video count:", error);
+      });
+  }, [user.id]);
+
   return (
     <div className="dashboard">
       {/* Header Section */}
@@ -16,11 +40,11 @@ const Trending = () => {
         <div className="left-section">
           <div className="info">
             <div className="label">Date</div>
-            <div className="value">April 9, 2023</div>
+            <DateDisplay />
           </div>
           <div className="info">
-            <div className="label">Total Videos</div>
-            <div className="value">145 Videos</div>
+            <div className="label">Total Videos in Your Region</div>
+            <div className="value">{videoCount} Videos</div>
           </div>
         </div>
         <div className="right-section">

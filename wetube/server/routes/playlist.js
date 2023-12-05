@@ -31,11 +31,9 @@ router.get("/:id", (req, res) => {
   });
 });
 
-
 // Return info for all videos contained in a playlist
 router.get("/:id/v", (req, res) => {
-  let sql = 
-  `SELECT v.videoID, v.videoTitle, v.channel, v.videoView
+  let sql = `SELECT v.videoID, v.videoTitle, v.channel, v.videoView
    FROM Contain c JOIN Video v ON (c.videoID = v.videoID)
    WHERE c.playListID = ${req.params.id};`;
 
@@ -45,7 +43,7 @@ router.get("/:id/v", (req, res) => {
       return;
     }
     res.json(result);
-  })
+  });
 });
 
 // to-do: add a route to remove a playlist from the database
@@ -81,28 +79,39 @@ function isAlphaNumeric(str) {
 
   for (i = 0, len = str.length; i < len; i++) {
     code = str.charCodeAt(i);
-    if (!(code == 32) && // space (' ')
-        !(code > 47 && code < 58) && // numeric (0-9)
-        !(code > 64 && code < 91) && // upper alpha (A-Z)
-        !(code > 96 && code < 123)) { // lower alpha (a-z)
+    if (
+      !(code == 32) && // space (' ')
+      !(code > 47 && code < 58) && // numeric (0-9)
+      !(code > 64 && code < 91) && // upper alpha (A-Z)
+      !(code > 96 && code < 123)
+    ) {
+      // lower alpha (a-z)
       return false;
     }
   }
   return true;
-};
+}
 
 // rename a playlist
 router.put("/:id", (req, res) => {
-  console.log(`Updating plalist ${req.params.id} with name "${req.body.playlistName}"`);
+  console.log(
+    `Updating plalist ${req.params.id} with name "${req.body.playlistName}"`
+  );
   if (!req.body.playlistName) {
-    res.status(400).json({status: "Error", message: "No playlist name provided"});
+    res
+      .status(400)
+      .json({ status: "Error", message: "No playlist name provided" });
   } else if (req.body.playlistName.length === 0) {
-    res.status(400).json({status: "Error", message: "Playlist name cannot be empty"})
+    res
+      .status(400)
+      .json({ status: "Error", message: "Playlist name cannot be empty" });
   } else if (!isAlphaNumeric(req.body.playlistName)) {
-    res.status(400).json({status: "Error", message: "Please submit a valid (alphanumeric) playlist name"});
+    res.status(400).json({
+      status: "Error",
+      message: "Please submit a valid (alphanumeric) playlist name",
+    });
   } else {
-    let sql =
-    `UPDATE UserPlaylist
+    let sql = `UPDATE UserPlaylist
     SET playlistName = "${req.body.playlistName}"
     WHERE playlistID = ${req.params.id}`;
 
@@ -116,7 +125,7 @@ router.put("/:id", (req, res) => {
       res.status(200).json(result);
     });
   }
-})
+});
 
 // to-do: add a route to add a video to a playlist
 router.post("/:id", (req, res) => {

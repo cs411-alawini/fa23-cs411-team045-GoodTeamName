@@ -13,7 +13,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 33vh;
+  height: 40vh;
   padding: 1rem 0;
 }
 
@@ -71,6 +71,7 @@
 
 .video-grid {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   /* Adjust as needed for your design */
   gap: 3rem;
