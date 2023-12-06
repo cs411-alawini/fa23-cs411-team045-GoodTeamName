@@ -41,8 +41,11 @@ router.get("/:userId/recommendations", (req, res) => {
       JOIN Video v ON con.videoID = v.videoID
       WHERE up.userId = ${req.params.userId}
   ) AS commonCategories ON otherUsers.videoCategory = commonCategories.videoCategory
+  LEFT JOIN Friend f ON (otherUsers.userId = f.userIDa AND ${req.params.userId} = f.userIDb) OR (otherUsers.userId = f.userIDb AND ${req.params.userId} = f.userIDa)
+  WHERE f.userIDa IS NULL AND f.userIDb IS NULL
   GROUP BY otherUsers.userId, otherUsers.username
   ORDER BY RAND()
+  
   
 
   
@@ -70,7 +73,7 @@ router.get("/:userId/recommendations", (req, res) => {
         FROM Friend AS f3
         WHERE f3.userIDa = ?
       ) AND U.userId != ?
-      LIMIT 1;
+      LIMIT 2;
     `;
 
     connection.query(friendOfFriendSql, [req.params.userId, req.params.userId, req.params.userId], function (err, friendOfFriendResult) {
