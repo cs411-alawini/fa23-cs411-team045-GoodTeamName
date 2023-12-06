@@ -32,7 +32,7 @@ const UserPlaylists = ({ userId }) => {
 
   return (
     <div className="button-container">
-      {playlists.slice(0, 2).map((playlist, index) => (
+      {playlists.slice(0, 4).map((playlist, index) => (
         <PlaylistButton key={index} playlistId={playlist.playlistID} />
       ))}
     </div>

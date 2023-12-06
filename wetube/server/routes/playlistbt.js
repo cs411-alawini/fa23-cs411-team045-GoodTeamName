@@ -6,7 +6,7 @@ const router = express.Router();
 // get top 2 playlistIDs for a user
 router.get("/", (req, res) => {
   // console.log(req.query);
-  let sql = `SELECT playlistID FROM UserPlaylist WHERE userID="${req.query.userID}" LIMIT 2;`;
+  let sql = `SELECT playlistID FROM UserPlaylist WHERE userID="${req.query.userID}" LIMIT 4;`;
 
   connection.query(sql, function (err, result) {
     if (err) {

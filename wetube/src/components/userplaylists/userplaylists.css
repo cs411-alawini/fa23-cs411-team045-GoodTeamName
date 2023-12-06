@@ -2,5 +2,5 @@
     display: flex;
     justify-content: space-evenly;
     flex: auto;
-    gap: 3rem;
+    gap: 1rem;
 }
