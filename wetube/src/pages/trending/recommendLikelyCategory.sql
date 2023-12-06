@@ -1,3 +1,5 @@
+-- Not implemented on the sql server
+
 DELIMITER $$
 
 CREATE PROCEDURE RecommendCategory(IN user_id INT)
