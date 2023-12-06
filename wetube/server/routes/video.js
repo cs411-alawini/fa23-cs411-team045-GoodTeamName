@@ -42,4 +42,20 @@ router.get("/:id/p", (req, res) => {
   });
 });
 
+// Get a random video (that isn't "News & Politics" to avoid tragedies/disasters)
+router.get("/find/r", (req, res) => {
+  let sql = 
+  `SELECT videoID FROM Video WHERE videoCategory != 25
+  ORDER BY RAND()
+  LIMIT 1`
+
+  connection.query(sql, function (err, result) {
+    if (err) {
+      res.send(err);
+      return;
+    }
+    res.json(result);
+  });
+});
+
 module.exports = router;
