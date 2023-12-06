@@ -19,9 +19,10 @@
 }
 
 .video-info {
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
 }
 
 .video-card.no-side-margin {

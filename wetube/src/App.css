@@ -13,10 +13,26 @@ a {
 /* Main styles */
 .main {
   font-family: "Inter", sans-serif;
-  background-color: #2a3447;
   /* $main-bg value from variables.scss */
   color: white;
   /* $main-color value from variables.scss */
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+html {
+  background-color: #2a3447;
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 /* Container styles */
@@ -29,6 +45,7 @@ a {
   width: 150px;
   padding: 5px 20px;
   border-right: 2px solid #384256;
+  height: 100%;
   /* $soft-bg value from variables.scss */
 
   /* Responsive styles using the lg mixin from responsive.scss */
