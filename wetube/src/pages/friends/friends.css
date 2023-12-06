@@ -55,3 +55,17 @@
   color: #0056b3;
 }
 
+.layout {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.recommendations {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.friends {
+  flex: 1;
+}

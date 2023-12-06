@@ -1,20 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './friends.css';
 import logo from "../../imgs/logo.png";
-
-const COUNTRY_CODES = {
-  BR: "Brazil",
-  CA: "Canada",
-  DE: "Germany",
-  FR: "France",
-  GB: "United Kingdom",
-  IND: "India",
-  JP: "Japan",
-  KR: "Korea",
-  MX: "Mexico",
-  RU: "Russia",
-  US: "United States",
-};
+import getCategoryName from "../../GetCategory";
 
 
 const Friend = ({ friend, onDeleteFriend }) => (
@@ -27,25 +14,14 @@ const Friend = ({ friend, onDeleteFriend }) => (
   </div>
 );
 
-// const Recommendation = ({ recommendation, onAddFriend }) => (
-//   <div className="recommendation">
-//     <div className="details">
-//       <img src={logo} alt={recommendation.username} />
-//       <div className="name">{recommendation.username}</div>
-//       <div className="common-interest">She also likes Music</div>
-//     </div>
-//     <button onClick={() => onAddFriend(recommendation.userId)}>Add Friend</button>
-//   </div>
-// );
-
 const Recommendation = ({ recommendation, onAddFriend }) => (
   <div className="recommendation">
     <div className="details">
       <img src={logo} alt={recommendation.username} />
       <div className="name">{recommendation.username}</div>
       <div className="common-interest">
-        {recommendation.userRegion
-          ? `He's also from ${COUNTRY_CODES[recommendation.userRegion]}`
+        {recommendation.videoCategories
+          ? `Common interests: ${getCategoryName(parseInt(recommendation.videoCategories, 10))}`
           : `He is a friend of ${recommendation.friendOfName}`}
       </div>
     </div>
@@ -70,12 +46,15 @@ const FriendPage = () => {
     fetch(`http://localhost:8080/friendslist/${user.id}/recommendations`)
       .then((response) => response.json())
       .then((data) => {
-        setRecommendations([...data.sameRegion, ...data.friendOfFriend]);
+        setRecommendations([...data.sameInterest, ...data.friendOfFriend]);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [user.id]);
 
   const handleAddFriend = (friendId) => {
+    console.log("friendId:", friendId);
+    console.log("recommendations:", recommendations);
+  
     fetch(`http://localhost:8080/friendslist/${user.id}/friends`, {
       method: "POST",
       headers: {
@@ -85,16 +64,22 @@ const FriendPage = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log("data:", data);
+  
+        const addedFriend = recommendations.find((r) => r.userId === friendId);
+        console.log("addedFriend:", addedFriend);
+  
+        setFriends((prevFriends) => [...prevFriends, addedFriend]);
         setRecommendations((prevRecommendations) =>
           prevRecommendations.filter((r) => r.userId !== friendId)
         );
-        setFriends((prevFriends) => [
-          ...prevFriends,
-          recommendations.find((r) => r.userId === friendId),
-        ]);
       })
       .catch((error) => console.log(error));
   };
+  
+  
+  
+  
 
   const handleDeleteFriend = (friendId) => {
     fetch(`http://localhost:8080/friendslist/${user.id}/friends/${friendId}`, {

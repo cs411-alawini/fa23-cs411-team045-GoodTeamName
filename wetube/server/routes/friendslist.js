@@ -21,94 +21,73 @@ router.get("/:userId/friends", (req, res) => {
   });
 });
 
-// // Get friend recommendations for a user
-// router.get("/:userId/recommendations", (req, res) => {
-//   let sql = `
-//     SELECT u.userId, u.username
-//     FROM Users AS u
-//     WHERE u.userId NOT IN (
-//       SELECT f.userIDb
-//       FROM Friend AS f
-//       WHERE f.userIDa = ?
-//     ) AND u.userId != ?
-//     LIMIT 3;
-//   `;
-
-//   connection.query(sql, [req.params.userId, req.params.userId], function (err, result) {
-//     if (err) {
-//       console.error(err);
-//       res.status(500).send('An error occurred while processing your request.');
-//       return;
-//     }
-//     res.json(result);
-//   });
-// });
 
 
 router.get("/:userId/recommendations", (req, res) => {
-  let userRegionSql = `
-    SELECT userRegion FROM Users WHERE userId = ?;
+  let sameInterestSql = `
+  SELECT otherUsers.userId, otherUsers.username, GROUP_CONCAT(DISTINCT commonCategories.videoCategory) AS videoCategories
+  FROM (
+      SELECT u.userId, u.username, v.videoCategory
+      FROM Users u
+      JOIN UserPlaylist up ON u.userId = up.userId
+      JOIN Contain con ON up.playlistID = con.playListID
+      JOIN Video v ON con.videoID = v.videoID
+      WHERE u.userId <> ${req.params.userId}
+  ) AS otherUsers
+  JOIN (
+      SELECT v.videoCategory
+      FROM UserPlaylist up
+      JOIN Contain con ON up.playlistID = con.playListID
+      JOIN Video v ON con.videoID = v.videoID
+      WHERE up.userId = ${req.params.userId}
+  ) AS commonCategories ON otherUsers.videoCategory = commonCategories.videoCategory
+  GROUP BY otherUsers.userId, otherUsers.username
+  ORDER BY RAND()
+  
+
+  
+  
   `;
 
-  connection.query(userRegionSql, [req.params.userId], function (err, result) {
+  connection.query(sameInterestSql, [req.params.userId, req.params.userId], function (err, sameInterestResult) {
     if (err) {
       console.error(err);
       res.status(500).send('An error occurred while processing your request.');
       return;
     }
 
-    let userRegion = result[0].userRegion;
-
-    let sameRegionSql = `
-      SELECT u.userId, u.username, u.userRegion
-      FROM Users AS u
-      WHERE u.userId NOT IN (
-        SELECT f.userIDb
-        FROM Friend AS f
-        WHERE f.userIDa = ?
-      ) AND u.userId != ? AND u.userRegion = ?
-      LIMIT 2;
+    let friendOfFriendSql = `
+      SELECT U.userId, U.username, f1.userIDa AS 'friendOfId', u1.username AS 'friendOfName'
+      FROM Users AS U
+      JOIN Friend AS f1 ON U.userId = f1.userIDb
+      JOIN Users AS u1 ON f1.userIDa = u1.userId
+      WHERE f1.userIDa IN (
+        SELECT f2.userIDb
+        FROM Friend AS f2
+        WHERE f2.userIDa = ?
+      ) AND U.userId NOT IN (
+        SELECT f3.userIDb
+        FROM Friend AS f3
+        WHERE f3.userIDa = ?
+      ) AND U.userId != ?
+      LIMIT 1;
     `;
 
-    let friendOfFriendSql = `
-    SELECT u.userId, u.username, f1.userIDa as 'friendOfId', u1.username as 'friendOfName'
-    FROM Users AS u
-    JOIN Friend AS f1 ON u.userId = f1.userIDb
-    JOIN Users AS u1 ON f1.userIDa = u1.userId
-    WHERE f1.userIDa IN (
-      SELECT f2.userIDb
-      FROM Friend AS f2
-      WHERE f2.userIDa = ?
-    ) AND u.userId NOT IN (
-      SELECT f3.userIDb
-      FROM Friend AS f3
-      WHERE f3.userIDa = ?
-    ) AND u.userId != ?
-    LIMIT 3;
-  `; 
-
-    connection.query(sameRegionSql, [req.params.userId, req.params.userId, userRegion], function (err, sameRegionResult) {
+    connection.query(friendOfFriendSql, [req.params.userId, req.params.userId, req.params.userId], function (err, friendOfFriendResult) {
       if (err) {
         console.error(err);
         res.status(500).send('An error occurred while processing your request.');
         return;
       }
 
-      connection.query(friendOfFriendSql, [req.params.userId, req.params.userId, req.params.userId], function (err, friendOfFriendResult) {
-        if (err) {
-          console.error(err);
-          res.status(500).send('An error occurred while processing your request.');
-          return;
-        }
-
-        res.json({
-          sameRegion: sameRegionResult,
-          friendOfFriend: friendOfFriendResult
-        });
+      res.json({
+        sameInterest: sameInterestResult,
+        friendOfFriend: friendOfFriendResult
       });
     });
   });
 });
+
 
 
 // Add a friend to the user's friends list
@@ -120,7 +99,7 @@ router.post("/:userId/friends", (req, res) => {
 
   connection.query(sql, function (err, result) {
     if (err) {
-      res.send(err);
+      res.status(500).send(err);
       return;
     }
     res.json(result);
