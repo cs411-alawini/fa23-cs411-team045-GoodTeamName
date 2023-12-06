@@ -13,7 +13,7 @@ const PlaylistButton = ({ playlistId }) => {
     const fetchVideoID = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/playlistbt/${playlistId}`
+          `http://35.239.242.245:8080/playlistbt/${playlistId}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -38,7 +38,7 @@ const PlaylistButton = ({ playlistId }) => {
   };
 
   return (
-    <button onClick={handleClick} className="playlist-button">
+    <button onClick={handleClick} className="video-card">
       <div className="playlist-label">Your Playlist</div>
       {thumbnailUrl ? (
         <img

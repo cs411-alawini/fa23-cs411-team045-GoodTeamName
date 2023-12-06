@@ -17,7 +17,7 @@ const ChannelsBar = () => {
   const user = Udata.user;
 
   useEffect(() => {
-    fetch(`http://localhost:8080/bar/${user.id}/countRegionVideos`)
+    fetch(`http://35.239.242.245:8080/bar/${user.id}/countRegionVideos`)
       .then((response) => {
         if (response.ok) {
           return response.json();

@@ -11,7 +11,7 @@ const UserPlaylists = ({ userId }) => {
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
-        const url = `http://localhost:8080/playlistbt?userID=` + user.id;
+        const url = `http://35.239.242.245:8080/playlistbt?userID=` + user.id;
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -32,7 +32,7 @@ const UserPlaylists = ({ userId }) => {
 
   return (
     <div className="button-container">
-      {playlists.slice(0, 2).map((playlist, index) => (
+      {playlists.slice(0, 4).map((playlist, index) => (
         <PlaylistButton key={index} playlistId={playlist.playlistID} />
       ))}
     </div>

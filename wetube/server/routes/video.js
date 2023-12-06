@@ -18,7 +18,7 @@ router.get("/:id", (req, res) => {
 
 // to-do: search for videos using the search term(video title)
 router.get("/search/:term", (req, res) => {
-  let sql = `SELECT * FROM Video WHERE videoTitle LIKE "%${req.params.term}%" OR channel LIKE "%${req.params.term}" ORDER BY videoLikes, videoView ASC LIMIT 20;`;
+  let sql = `SELECT * FROM Video WHERE videoTitle LIKE "%${req.params.term}%" OR channel LIKE "%${req.params.term}" ORDER BY videoLikes, videoView ASC LIMIT 30;`;
 
   connection.query(sql, function (err, result) {
     if (err) {

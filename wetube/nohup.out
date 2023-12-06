@@ -1,0 +1,1685 @@
+Server is running on port 8080.
+
+> wetube@0.1.0 start
+> react-scripts start
+
+(node:5267) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:5267) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+
+warn - No utility classes were detected in your source files. If this is unexpected, double-check the `content` option in your Tailwind CSS configuration.
+warn - https://tailwindcss.com/docs/content-configuration
+Compiled successfully!
+
+You can now view wetube in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.128.0.3:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Compiled successfully!
+webpack compiled successfully
+
+> wetube@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3000.
+Server is running on port 8080.
+
+> wetube@0.1.0 start
+> react-scripts start
+
+(node:6163) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:6163) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+
+warn - No utility classes were detected in your source files. If this is unexpected, double-check the `content` option in your Tailwind CSS configuration.
+warn - https://tailwindcss.com/docs/content-configuration
+Compiled successfully!
+
+You can now view wetube in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.128.0.3:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Compiled successfully!
+webpack compiled successfully
+[
+  {
+    userID: 2048,
+    userName: 'John',
+    userPassword: 'pswd',
+    userRegion: 'US'
+  }
+]
+Adding ("81", "1I7SV2N0E0A") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("81", "N1sp0E1RA-E") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("48", "efnJISA_Q8M") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Terminated
+Server is running on port 8080.
+
+> wetube@0.1.0 start
+> react-scripts start
+
+(node:7439) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:7439) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+
+warn - No utility classes were detected in your source files. If this is unexpected, double-check the `content` option in your Tailwind CSS configuration.
+warn - https://tailwindcss.com/docs/content-configuration
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+[
+  {
+    userID: 2067,
+    userName: 'misaka',
+    userPassword: 'misaka',
+    userRegion: 'JP'
+  }
+]
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/playlistbutton/Playlistbutton.js
+Syntax error: Unexpected token, expected "..." (44:7) (44:7)
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+ERROR in ./src/components/playlistbutton/Playlistbutton.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/mikoto/Wetube/wetube/src/components/playlistbutton/Playlistbutton.js: Unexpected token, expected "..." (44:7)
+
+  42 |       <div className="playlist-label">Your Playlist</div>
+  43 |       <div className=""
+> 44 |       {thumbnailUrl ? (
+     |        ^
+  45 |         <img
+  46 |           src={thumbnailUrl}
+  47 |           alt="Playlist Thumbnail"
+    at constructor (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:356:19)
+    at FlowParserMixin.raise (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3223:19)
+    at FlowParserMixin.unexpected (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3253:16)
+    at FlowParserMixin.expect (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3585:28)
+    at FlowParserMixin.jsxParseAttribute (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6805:12)
+    at FlowParserMixin.jsxParseOpeningElementAfterName (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6827:28)
+    at FlowParserMixin.jsxParseOpeningElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6822:17)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6846:33)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6858:32)
+    at FlowParserMixin.jsxParseElement (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6915:17)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6927:19)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10636:23)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5700:39
+    at FlowParserMixin.tryParse (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3592:20)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5700:18)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10567:39
+    at FlowParserMixin.allowInAnd (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12284:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10567:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11499:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5799:18)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11137:23)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6932:20)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10636:23)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5755:18)
+    at FlowParserMixin.parseExpressionBase (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10551:23)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10547:39
+    at FlowParserMixin.allowInAnd (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12279:16)
+    at FlowParserMixin.parseExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10547:17)
+    at FlowParserMixin.parseReturnStatement (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:13003:28)
+    at FlowParserMixin.parseStatementContent (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12621:21)
+    at FlowParserMixin.parseStatementLike (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12588:17)
+    at FlowParserMixin.parseStatementLike (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5088:24)
+    at FlowParserMixin.parseStatementListItem (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12568:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:13189:61)
+    at FlowParserMixin.parseBlockBody (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:13182:10)
+    at FlowParserMixin.parseBlock (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:13170:10)
+    at FlowParserMixin.parseFunctionBody (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11935:24)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5062:63
+
+ERROR in [eslint] 
+src/components/playlistbutton/Playlistbutton.js
+  Line 44:7:  Parsing error: Unexpected token, expected "..." (44:7)
+
+webpack compiled with 2 errors and 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/playlistbutton/Playlistbutton.js
+Syntax error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (54:14) (54:14)
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+ERROR in ./src/components/playlistbutton/Playlistbutton.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/mikoto/Wetube/wetube/src/components/playlistbutton/Playlistbutton.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (54:14)
+
+  52 |       ) : (
+  53 |         <div>Loading thumbnail...</div> // Placeholder while loading
+> 54 |               </div>
+     |               ^
+  55 |       )}
+  56 |     </button>
+  57 |   );
+    at constructor (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:356:19)
+    at FlowParserMixin.raise (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3223:19)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6906:18)
+    at FlowParserMixin.jsxParseElement (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6915:17)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6927:19)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10636:23)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5700:39
+    at FlowParserMixin.tryParse (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3592:20)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5700:18)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10567:39
+    at FlowParserMixin.allowInAnd (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12284:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10567:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11499:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5799:18)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11137:23)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6932:20)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10636:23)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5755:18)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5190:77
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5240:16)
+    at FlowParserMixin.parseConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5190:27)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10640:17)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5755:18)
+    at FlowParserMixin.parseExpressionBase (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10551:23)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10547:39
+    at FlowParserMixin.allowInAnd (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12284:12)
+    at FlowParserMixin.parseExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10547:17)
+    at FlowParserMixin.jsxParseExpressionContainer (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6792:31)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6871:36)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6858:32)
+    at FlowParserMixin.jsxParseElement (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6915:17)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6927:19)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+
+ERROR in [eslint] 
+src/components/playlistbutton/Playlistbutton.js
+  Line 54:14:  Parsing error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (54:14)
+
+webpack compiled with 2 errors and 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/playlistbutton/Playlistbutton.js
+Syntax error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (52:8) (52:8)
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+ERROR in ./src/components/playlistbutton/Playlistbutton.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/mikoto/Wetube/wetube/src/components/playlistbutton/Playlistbutton.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (52:8)
+
+  50 |         ) : (
+  51 |           <div>Loading thumbnail...</div> // Placeholder while loading
+> 52 |         </div>
+     |         ^
+  53 |       )}
+  54 |     </button>
+  55 |   );
+    at constructor (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:356:19)
+    at FlowParserMixin.raise (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3223:19)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6906:18)
+    at FlowParserMixin.jsxParseElement (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6915:17)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6927:19)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10636:23)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5700:39
+    at FlowParserMixin.tryParse (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:3592:20)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5700:18)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10567:39
+    at FlowParserMixin.allowInAnd (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12284:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10567:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11499:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5799:18)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:11137:23)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6932:20)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10636:23)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5755:18)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5190:77
+    at FlowParserMixin.forwardNoArrowParamsConversionAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5240:16)
+    at FlowParserMixin.parseConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5190:27)
+    at FlowParserMixin.parseMaybeConditional (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10640:17)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10597:21)
+    at FlowParserMixin.parseMaybeAssign (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:5755:18)
+    at FlowParserMixin.parseExpressionBase (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10551:23)
+    at /home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10547:39
+    at FlowParserMixin.allowInAnd (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:12284:12)
+    at FlowParserMixin.parseExpression (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10547:17)
+    at FlowParserMixin.jsxParseExpressionContainer (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6792:31)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6871:36)
+    at FlowParserMixin.jsxParseElementAt (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6858:32)
+    at FlowParserMixin.jsxParseElement (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6915:17)
+    at FlowParserMixin.parseExprAtom (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:6927:19)
+    at FlowParserMixin.parseExprSubscripts (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10857:23)
+    at FlowParserMixin.parseUpdate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10840:21)
+    at FlowParserMixin.parseMaybeUnary (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10816:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10654:61)
+    at FlowParserMixin.parseExprOps (/home/mikoto/Wetube/wetube/node_modules/@babel/parser/lib/index.js:10659:23)
+
+ERROR in [eslint] 
+src/components/playlistbutton/Playlistbutton.js
+  Line 52:8:  Parsing error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (52:8)
+
+webpack compiled with 2 errors and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Adding ("60", "tsh7waq3Fyo") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "s9aFUEE560M") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "rQz8a4uWYi0") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "qgIVrMfs-r4") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("59", "yG_xbqL9Fss") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "kn8ci8Hn0b8") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "VXNzoiNxaic") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "sxfB3S_Yrxw") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "Q80Dz4rJw2w") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "BKsfW5ZJpds") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "8kSfbET6XLA") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Adding ("69", "ioiiRMuuuNs") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/userplaylists/Userplaylists.js
+  Line 27:6:  React Hook useEffect has a missing dependency: 'user.id'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/userplaylists/Userplaylists.js
+  Line 27:6:  React Hook useEffect has a missing dependency: 'user.id'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+src/pages/login/Login.js
+  Line 13:10:  'error' is assigned a value but never used  no-unused-vars
+
+src/pages/signup/Signup.js
+  Line 14:10:  'error' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Terminated

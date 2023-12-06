@@ -10,11 +10,10 @@
   flex: 1;
 }
 
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
-  height: 33vh;
-  /* Now using only 40% of the viewport height */
+  height: 40vh;
 }
 
 .left-section,
@@ -26,12 +25,11 @@
 .left-section {
   flex-direction: column;
   margin-left: 3rem;
-  /* mr-6 */
 }
 
 .right-section {
   flex-direction: row;
-}
+} */
 
 .date,
 .video-counts {
@@ -43,37 +41,29 @@
   /* Space between the two boxes */
 }
 
-.label {
+/* .label {
   color: #a0aec0;
-  /* text-gray-400 */
   margin-bottom: 0.25rem;
-  /* mb-1 */
   font-size: 2rem;
-  /* text-xl */
 }
 
 .value {
   font-size: 1.5rem;
-  /* text-lg */
 }
 
 .divider {
   margin: 1.5rem 0;
-  /* my-6 */
   border-color: #4a5568;
-  /* border-gray-700 */
 }
 
 .video-grid {
   display: flex;
   justify-content: space-around;
-  /* Adjust as needed for your design */
   gap: 3rem;
 }
 
-/* Responsive grid */
 @media (max-width: 1000px) {
   .video-grid {
     flex-direction: column;
   }
-}
+} */

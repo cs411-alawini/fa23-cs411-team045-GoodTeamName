@@ -9,7 +9,7 @@ function RandomVid(props) {
     const [added, setAdded] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:8080/video/find/r')
+        fetch('http://35.239.242.245:8080/video/find/r')
          .then(res => res.json())
          .then((data) => {
             setRandomID(data[0].videoID);
@@ -19,7 +19,7 @@ function RandomVid(props) {
 
     async function addToPlaylist() {
         try {
-            await fetch(`http://localhost:8080/playlist/${props.playlistID}`, {
+            await fetch(`http://35.239.242.245:8080/playlist/${props.playlistID}`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({videoID: randomID})

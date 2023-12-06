@@ -27,7 +27,7 @@ const Playlists = () => {
     try {
       const userID = user.id;
       const response = await fetch(
-        `http://localhost:8080/playlist?userID=${userID}`,
+        `http://35.239.242.245:8080/playlist?userID=${userID}`,
         {
           method: "GET",
         }
@@ -47,7 +47,7 @@ const Playlists = () => {
       if (tempPlaylists.length > 0) {
         const stats = tempPlaylists.map(() => null);
         for (let i = 0; i < stats.length; i++) {
-          const res = await fetch(`http://localhost:8080/playlist/${tempPlaylists[i].playlistID}/stats`);
+          const res = await fetch(`http://35.239.242.245:8080/playlist/${tempPlaylists[i].playlistID}/stats`);
           const data = await res.json();
           stats[i] = data[0];
         }
@@ -112,7 +112,7 @@ const Playlists = () => {
   const handleDeleteButtonClick = async (playlistID) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/playlist/${playlistID}`,
+        `http://35.239.242.245:8080/playlist/${playlistID}`,
         {
           method: "DELETE",
         }
@@ -142,7 +142,7 @@ const Playlists = () => {
 
     // Add your API call to create a new playlist here
     try {
-      const response = await fetch("http://localhost:8080/playlist", {
+      const response = await fetch("http://35.239.242.245:8080/playlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

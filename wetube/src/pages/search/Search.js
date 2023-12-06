@@ -20,7 +20,7 @@ const Search = () => {
     const fetchSearchResults = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/video/search/${searchTerm}`
+          `http://35.239.242.245:8080/video/search/${searchTerm}`
         );
         if (response.ok) {
           const data = await response.json();
