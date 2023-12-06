@@ -70,16 +70,22 @@ function PlaylistModal(props) {
     }
 
     async function addToPlaylist(e, idx) {
-    let newAdded = [...added];
-    newAdded[idx] = true;
-    setAdded(newAdded);
-
-    try {
-        await fetch(`http://localhost:8080/playlist/${e.target.value}`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({videoID: props.videoID})
-        })
+        
+        try {
+            const response = await fetch(`http://localhost:8080/playlist/${e.target.value}`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({videoID: props.videoID})
+            })
+            const message = await response.json();
+            console.log(message);
+            if (message.sqlState === "45000") {
+                alert("Playlists can not have more than 100 videos");
+            } else {
+                let newAdded = [...added];
+                newAdded[idx] = true;
+                setAdded(newAdded);
+            }
     } catch (err) {
         console.error(err);
     }

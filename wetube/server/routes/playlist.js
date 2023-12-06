@@ -160,14 +160,16 @@ router.put("/:id", (req, res) => {
   }
 });
 
-// to-do: add a route to add a video to a playlist
+// add a video to a playlist
 router.post("/:id", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   let sql = `INSERT INTO Contain (playlistID, videoID) VALUES ("${req.params.id}", "${req.body.videoID}");`;
   console.log(`Adding ("${req.params.id}", "${req.body.videoID}") to Contain`);
   connection.query(sql, function (err, result) {
+    console.log(result);
+    console.log(err);
     if (err) {
-      res.send(err);
+      res.json(err);
       return;
     }
     res.json(result);
