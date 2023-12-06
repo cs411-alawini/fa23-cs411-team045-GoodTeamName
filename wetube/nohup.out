@@ -1683,3 +1683,205 @@ src/pages/signup/Signup.js
 
 webpack compiled with 1 warning
 Terminated
+Server is running on port 8080.
+
+> wetube@0.1.0 start
+> react-scripts start
+
+(node:945) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:945) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+
+warn - No utility classes were detected in your source files. If this is unexpected, double-check the `content` option in your Tailwind CSS configuration.
+warn - https://tailwindcss.com/docs/content-configuration
+Compiled successfully!
+
+You can now view wetube in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.128.0.3:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Compiled successfully!
+webpack compiled successfully
+[
+  {
+    userID: 2067,
+    userName: 'misaka',
+    userPassword: 'misaka',
+    userRegion: 'JP'
+  }
+]
+[
+  {
+    userID: 2048,
+    userName: 'John',
+    userPassword: 'pswd',
+    userRegion: 'US'
+  }
+]
+[
+  {
+    userID: 2050,
+    userName: 'abs',
+    userPassword: 'abs',
+    userRegion: 'US'
+  }
+]
+[
+  {
+    userID: 2075,
+    userName: 'des',
+    userPassword: 'des',
+    userRegion: 'CA'
+  }
+]
+Adding ("113", "vjqwH9PKNiE") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+[
+  {
+    userID: 2050,
+    userName: 'abs',
+    userPassword: 'abs',
+    userRegion: 'US'
+  }
+]
+[
+  {
+    userID: 2050,
+    userName: 'abs',
+    userPassword: 'abs',
+    userRegion: 'US'
+  }
+]
+[
+  {
+    userID: 2067,
+    userName: 'misaka',
+    userPassword: 'misaka',
+    userRegion: 'JP'
+  }
+]
+[
+  {
+    userID: 2051,
+    userName: 'yty',
+    userPassword: 'yty',
+    userRegion: 'US'
+  }
+]
+Terminated
+Server is running on port 8080.
+
+> wetube@0.1.0 start
+> react-scripts start
+
+(node:2183) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:2183) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+
+warn - No utility classes were detected in your source files. If this is unexpected, double-check the `content` option in your Tailwind CSS configuration.
+warn - https://tailwindcss.com/docs/content-configuration
+Compiled successfully!
+
+You can now view wetube in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.128.0.3:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Compiled successfully!
+webpack compiled successfully
+[
+  {
+    userID: 2048,
+    userName: 'John',
+    userPassword: 'pswd',
+    userRegion: 'US'
+  }
+]
+[
+  {
+    userID: 2048,
+    userName: 'John',
+    userPassword: 'pswd',
+    userRegion: 'US'
+  }
+]
+[
+  {
+    userID: 2067,
+    userName: 'misaka',
+    userPassword: 'misaka',
+    userRegion: 'JP'
+  }
+]
+[
+  {
+    userID: 2050,
+    userName: 'abs',
+    userPassword: 'abs',
+    userRegion: 'US'
+  }
+]
+Adding ("115", "0oMT_6Zu4a4") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null
+Updating plalist 49 with name "Cool Playlist"
+Adding ("76", "WzeqquNroos") to Contain
+undefined
+Error: Playlists can not have more than 100 videos
+    at Packet.asError (/home/mikoto/Wetube/wetube/node_modules/mysql2/lib/packets/packet.js:728:17)
+    at Query.execute (/home/mikoto/Wetube/wetube/node_modules/mysql2/lib/commands/command.js:29:26)
+    at Connection.handlePacket (/home/mikoto/Wetube/wetube/node_modules/mysql2/lib/connection.js:478:34)
+    at PacketParser.onPacket (/home/mikoto/Wetube/wetube/node_modules/mysql2/lib/connection.js:97:12)
+    at PacketParser.executeStart (/home/mikoto/Wetube/wetube/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/home/mikoto/Wetube/wetube/node_modules/mysql2/lib/connection.js:104:25)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:495:3)
+    at Readable.push (node:internal/streams/readable:375:5) {
+  code: 'ER_SIGNAL_EXCEPTION',
+  errno: 1644,
+  sqlState: '45000',
+  sqlMessage: 'Playlists can not have more than 100 videos',
+  sql: 'INSERT INTO Contain (playlistID, videoID) VALUES ("76", "WzeqquNroos");'
+}
+Adding ("39", "Y6iXHj7TYu0") to Contain
+ResultSetHeader {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  info: '',
+  serverStatus: 2,
+  warningStatus: 0,
+  changedRows: 0
+}
+null

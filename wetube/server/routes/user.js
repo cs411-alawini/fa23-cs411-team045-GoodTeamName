@@ -61,7 +61,7 @@ router.post("/login", async (req, res) => {
 
       // Compare the provided password with the hashed password
       // to-do-final: change this to "password === user.userPassword"
-      const passwordMatch = bcrypt.compare(password, user.userPassword);
+      const passwordMatch = password === user.userPassword;
 
       if (!passwordMatch) {
         return res.status(401).json({ error: "Invalid  password" });
