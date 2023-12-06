@@ -11,6 +11,21 @@
     align-items: center;
 }
 
+.empty-container {
+    width: 100%;
+    text-align: center;
+}
+
+.empty-container h2 {
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.empty-container .random-vid {
+    width: 70%;
+    margin: 10px auto;
+}
+
 .playlist-title {
     text-align: center;
     width: 100%;

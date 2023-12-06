@@ -1,0 +1,9 @@
+.random-vid {
+    margin: 10px;
+}
+.random-vid .btn {
+    min-width: 100px;
+    width: 20%;
+    height: 30px;
+    margin: 0 auto 10px auto;
+}

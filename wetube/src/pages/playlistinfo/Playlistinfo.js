@@ -1,34 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useReducer} from "react";
 import { useParams, Link } from 'react-router-dom';
 import "./playlistinfo.css";
 import pencil from "../../imgs/pencil.svg";
+import YouTubeEmbed from "../../components/thumbnail/Thumbnail";
+import RandomVid from "../../components/randomvid/RandomVid";
 
 export const getThumbnail = (videoId) => {
-  return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 };
-
-
-// Placeholder playlist of videos approximating the data stored by our database
-export const placeholderPlaylist = [
-  {
-    video_id: "Wdjh81uH6FU",
-    title: "Happy Cat",
-    channel: "bob123",
-    views: 1000000,
-  },
-  {
-    video_id: "Wdjh81uH6FU",
-    title: "Unhappy Cat",
-    channel: "jim345",
-    views: 123456,
-  },
-  {
-    video_id: "Wdjh81uH6FU",
-    title: "I am already out of fake video ideas",
-    channel: "John's Channel",
-    views: 2,
-  },
-];
 
 const Playlistinfo = () => {
   const { id } = useParams();
@@ -41,7 +20,8 @@ const Playlistinfo = () => {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
   const [editable, setEditable] = useState(false);
-  const [deleted, setDeleted] = useState(false);
+  const [deleted, setDeleted] = useState(0);
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
   const storedUser = sessionStorage.getItem("currentUser");
   const data = JSON.parse(storedUser);
   const user = data.user;
@@ -54,12 +34,10 @@ const Playlistinfo = () => {
           setLoading(false);
           if (data.length === 0) {
             // Playlist not found
-            console.log("Empty response");
             setFailed(true);
           } else {
             setTitle(data[0].playlistName);
             setOwnerID(data[0].userID);
-            console.log("resetting...");
           }
         });
     } catch (err) {
@@ -68,12 +46,12 @@ const Playlistinfo = () => {
       setLoading(false);
       setFailed(true);
     }
-  }, [id, setDeleted]);
+  }, [id, deleted]);
 
+  // Get the owner of a playlist if you're viewing one that isn't yours
   useEffect(() => {
     if (ownerID !== -1 && user.id != ownerID) {
       try {
-        console.log("fetching owner name");
         fetch(`http://localhost:8080/user/${ownerID}`)
           .then((res) => res.json())
           .then((data) => {
@@ -84,7 +62,7 @@ const Playlistinfo = () => {
             }
           });
       } catch (err) {
-        console.log("error");
+        // console.log("error");
         console.error(err);
         setLoading(false);
         setFailed(true);
@@ -92,6 +70,7 @@ const Playlistinfo = () => {
     }
   }, [ownerID])
 
+  // Get the videos from a playlist
   useEffect(() => {
     try {
       fetch(`http://localhost:8080/playlist/${playListID}/v`)
@@ -108,20 +87,24 @@ const Playlistinfo = () => {
       setLoading(false);
       setFailed(true);
     }
-  }, [playListID, removeVideo]);
+  }, [playListID, removeVideo, deleted]);
 
   // Removes video from playlist
   async function removeVideo(videoID) {
-    console.log("Deleting...");
     try {
-      fetch(`http://localhost:8080/playlist/${playListID}/${videoID}`, {
+      await fetch(`http://localhost:8080/playlist/${playListID}/${videoID}`, {
           method: "DELETE"
-      }).then(() => {
-        return true;
-      })
+      });
+      let vidRemoved = [];
+      for (let i = 0; i < videos.length; i++) {
+        if (videos[i].videoID !== videoID) {
+          vidRemoved.push(videos[i]);
+        }
+      }
+      setVideos(vidRemoved);
+      return true;
     } catch (err) {
       console.error(err);
-      console.log("error");
       return false;
     }
   }
@@ -132,7 +115,7 @@ const Playlistinfo = () => {
       fetch(`http://localhost:8080/playlist/${playListID}`, {
           method: "DELETE"
       }).then(() => {
-        setDeleted(true);
+        setDeleted(deleted + 1);
         return true;
       })
     } catch (err) {
@@ -189,12 +172,10 @@ const Playlistinfo = () => {
 
   if (videos.length === 0) {
     return (
-      <div>
-        <ul className="playlist-formatted">
-          <li>
-            <span>Playlist is empty</span>
-          </li>
-        </ul>
+      <div className="empty-container">
+          <h2>This playlist has no videos</h2>
+          <p>Want to add this one?</p>
+          <RandomVid playlistID={playListID} rerenderCallback={forceUpdate} />
       </div>
     )
   }
