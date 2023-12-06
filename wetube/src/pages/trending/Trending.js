@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../dashboard/dashboard.css";
+import "../trending/trending.css";
 import Videoinfo from "../videoinfo/Videoinfo";
 import VideoButton from "../../components/videobutton/Videobutton";
 import Channelsbar from "../../components/channelbar/Channelbar";
@@ -55,7 +55,7 @@ const Trending = () => {
   };
 
   return (
-    <div className="dashboard">
+    <div className="trending">
       {/* Header Section */}
       <div className="header">
         <div className="left-section">

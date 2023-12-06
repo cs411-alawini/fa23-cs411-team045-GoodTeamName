@@ -1,39 +1,11 @@
-.playlist-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    background-color: #4a5568;
-    /* bg-gray-700 */
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-    max-width: 600px;
-}
-
-.playlist-button:hover {
-    transform: scale(1.05);
-}
-
 .playlist-thumbnail {
-    width: 90%;
-    /* Adjust as needed */
     height: auto;
-    /* Adjust if you want a fixed height */
     border-radius: 8px;
-    /* Optional: if you want rounded corners for the image */
-    margin-top: 0.5rem;
     margin-bottom: 1rem;
 }
 
 .playlist-label {
     color: #a0aec0;
-    /* text-gray-400 */
-    margin-bottom: 0.25rem;
-    /* mb-1 */
     font-size: 2rem;
     text-align: center;
 }

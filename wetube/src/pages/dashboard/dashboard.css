@@ -74,7 +74,7 @@
   flex-direction: row;
   justify-content: space-around;
   /* Adjust as needed for your design */
-  gap: 3rem;
+  gap: 1rem;
 }
 
 /* Responsive grid */

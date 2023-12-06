@@ -38,7 +38,7 @@ const PlaylistButton = ({ playlistId }) => {
   };
 
   return (
-    <button onClick={handleClick} className="playlist-button">
+    <button onClick={handleClick} className="video-card">
       <div className="playlist-label">Your Playlist</div>
       {thumbnailUrl ? (
         <img
