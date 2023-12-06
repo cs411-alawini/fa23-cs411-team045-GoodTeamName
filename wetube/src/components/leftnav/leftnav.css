@@ -1,7 +1,8 @@
 /* Menu styles */
 .menu {
   /* Make the menu fill the height of the viewport */
-  height: 91.5vh;
+  /* height: 91.5vh; */
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,7 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5vh;
 }
 
 /* ListItem styles */

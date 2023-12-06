@@ -57,15 +57,6 @@ const Login = () => {
       <form className="sign-auth-form" onSubmit={handleFormSubmit}>
         <h2 className="signup-title">Sign up</h2>
 
-        <label className="signup-name">
-          <span>username:</span>
-          <input
-            required
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
-        </label>
-
         <label className="signup-region">
           <span>region:</span>
           <select
@@ -86,6 +77,15 @@ const Login = () => {
             <option value="RU">Russia</option>
             <option value="US">United States</option>
           </select>
+        </label>
+
+        <label className="signup-name">
+          <span>username:</span>
+          <input
+            required
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
         </label>
 
         <label className="signup-password">

@@ -74,13 +74,15 @@ const Login = () => {
           {isPending ? "Logging in..." : "Login"}
         </button>
         <ToastContainer />
-
-        <button>
+      </form>
+      <p>
+        Or, click here to 
+        <button className="signup-btn">
           <a href="/signup" className="btn login-btn-2">
             Sign Up
           </a>
         </button>
-      </form>
+      </p>
     </div>
   );
 };

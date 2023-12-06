@@ -16,21 +16,28 @@ a {
   background-color: #2a3447;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .login-auth-form {
-  height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start space-between;
   align-items: center; /* Added to center the form horizontally */
-  margin: 60px auto;
   padding: 20px; /* Decreased padding to make the form smaller */
-  border: 1px solid #ddd;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  margin: 8px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.login-auth-form input {
+  margin: 0 0 0 8px;
+  border-radius: 3px;
   color: black;
+  padding: 0 6px;
 }
 
 .login-title {
@@ -49,6 +56,6 @@ a {
   margin-bottom: 20px;
 }
 
-.login-btn-1 {
-  margin-bottom: 20px;
+.signup-btn {
+  margin: 10px;
 }
