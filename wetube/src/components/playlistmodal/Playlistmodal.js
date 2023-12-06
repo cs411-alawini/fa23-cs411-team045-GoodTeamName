@@ -9,12 +9,12 @@ function PlaylistModal(props) {
     useEffect(() => {
     try {
         async function fetchPlaylists() {
-        let res = await fetch(`http://localhost:8080/playlist?userID=${props.user.id}`);
+        let res = await fetch(`http://35.239.242.245:8080/playlist?userID=${props.user.id}`);
         return await res.json();
         }
         
         async function fetchAdded(tempPlaylists) {
-        let res = await fetch(`http://localhost:8080/video/${props.videoID}/p`);
+        let res = await fetch(`http://35.239.242.245:8080/video/${props.videoID}/p`);
         let existingData = await res.json();
         existingData = existingData.map((playlistObj) => playlistObj.playListID)
         let buttons = [];
@@ -72,7 +72,7 @@ function PlaylistModal(props) {
     async function addToPlaylist(e, idx) {
         
         try {
-            const response = await fetch(`http://localhost:8080/playlist/${e.target.value}`, {
+            const response = await fetch(`http://35.239.242.245:8080/playlist/${e.target.value}`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({videoID: props.videoID})

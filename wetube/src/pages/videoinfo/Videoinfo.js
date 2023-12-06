@@ -29,7 +29,7 @@ const Videoinfo = () => {
 
   useEffect(() => {
     try {
-      fetch(`http://localhost:8080/video/${id}`)
+      fetch(`http://35.239.242.245:8080/video/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);

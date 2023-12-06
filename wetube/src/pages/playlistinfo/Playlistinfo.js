@@ -28,7 +28,7 @@ const Playlistinfo = () => {
 
   useEffect(() => {
     try {
-      fetch(`http://localhost:8080/playlist/${id}`)
+      fetch(`http://35.239.242.245:8080/playlist/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);
@@ -52,7 +52,7 @@ const Playlistinfo = () => {
   useEffect(() => {
     if (ownerID !== -1 && user.id != ownerID) {
       try {
-        fetch(`http://localhost:8080/user/${ownerID}`)
+        fetch(`http://35.239.242.245:8080/user/${ownerID}`)
           .then((res) => res.json())
           .then((data) => {
             if (data.length === 0) {
@@ -73,7 +73,7 @@ const Playlistinfo = () => {
   // Get the videos from a playlist
   useEffect(() => {
     try {
-      fetch(`http://localhost:8080/playlist/${playListID}/v`)
+      fetch(`http://35.239.242.245:8080/playlist/${playListID}/v`)
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);
@@ -92,7 +92,7 @@ const Playlistinfo = () => {
   // Removes video from playlist
   async function removeVideo(videoID) {
     try {
-      await fetch(`http://localhost:8080/playlist/${playListID}/${videoID}`, {
+      await fetch(`http://35.239.242.245:8080/playlist/${playListID}/${videoID}`, {
           method: "DELETE"
       });
       let vidRemoved = [];
@@ -112,7 +112,7 @@ const Playlistinfo = () => {
   async function deletePlaylist() {
     console.log("Deleting playlist");
     try {
-      fetch(`http://localhost:8080/playlist/${playListID}`, {
+      fetch(`http://35.239.242.245:8080/playlist/${playListID}`, {
           method: "DELETE"
       }).then(() => {
         setDeleted(deleted + 1);
@@ -132,7 +132,7 @@ const Playlistinfo = () => {
   async function submitRename() {
     setEditable(false);
     try {
-      fetch(`http://localhost:8080/playlist/${playListID}`, {
+      fetch(`http://35.239.242.245:8080/playlist/${playListID}`, {
           method: "PUT",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({"playlistName": rename})

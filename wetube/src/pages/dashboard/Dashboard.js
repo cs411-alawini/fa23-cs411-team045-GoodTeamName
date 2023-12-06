@@ -18,7 +18,7 @@ const Dashboard = () => {
     const fetchPlaylistCount = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/playlistbt/${user.id}/countLists`
+          `http://35.239.242.245:8080/playlistbt/${user.id}/countLists`
         );
         const data = await response.json();
         setPlaylistCount(data[0].playlistCount); // Update the state with the fetched count
@@ -36,7 +36,7 @@ const Dashboard = () => {
     const fetchVideoCount = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/playlistbt/${user.id}/countVideos`
+          `http://35.239.242.245:8080/playlistbt/${user.id}/countVideos`
         );
         const data = await response.json();
         setVideoCount(data[0].videoCount); // Update the state with the fetched count

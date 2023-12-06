@@ -25,7 +25,7 @@ const Trending = () => {
   const [recommendations, setRecommendations] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/playlistbt/${user.id}/countRegionVideos`)
+    fetch(`http://35.239.242.245:8080/playlistbt/${user.id}/countRegionVideos`)
       .then((response) => response.json())
       .then((data) => {
         setVideoCount(data.videoCount);
@@ -33,7 +33,7 @@ const Trending = () => {
       .catch((error) => {
         console.error("Error fetching video count:", error);
       });
-    fetch(`http://localhost:8080/recommend/${user.id}`)
+    fetch(`http://35.239.242.245:8080/recommend/${user.id}`)
       .then((response) => response.json())
       .then((data) => {
         setRecommendations(data);

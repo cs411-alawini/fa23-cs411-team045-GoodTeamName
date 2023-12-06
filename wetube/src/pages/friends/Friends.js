@@ -38,12 +38,12 @@ const FriendPage = () => {
   const user = data.user;
 
   useEffect(() => {
-    fetch(`http://localhost:8080/friendslist/${user.id}/friends`)
+    fetch(`http://35.239.242.245:8080/friendslist/${user.id}/friends`)
       .then((response) => response.json())
       .then((data) => setFriends(data))
       .catch((error) => console.log(error));
   
-    fetch(`http://localhost:8080/friendslist/${user.id}/recommendations`)
+    fetch(`http://35.239.242.245:8080/friendslist/${user.id}/recommendations`)
       .then((response) => response.json())
       .then((data) => {
         setRecommendations([...data.sameInterest, ...data.friendOfFriend]);
@@ -55,7 +55,7 @@ const FriendPage = () => {
     console.log("friendId:", friendId);
     console.log("recommendations:", recommendations);
   
-    fetch(`http://localhost:8080/friendslist/${user.id}/friends`, {
+    fetch(`http://35.239.242.245:8080/friendslist/${user.id}/friends`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ const FriendPage = () => {
   
 
   const handleDeleteFriend = (friendId) => {
-    fetch(`http://localhost:8080/friendslist/${user.id}/friends/${friendId}`, {
+    fetch(`http://35.239.242.245:8080/friendslist/${user.id}/friends/${friendId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
